@@ -1,5 +1,5 @@
 <!-- <div class="overlay" *ngIf="toggoleNav | async"></div> -->
-<div class="sideNav" [@toggoleSideNav]="(toggoleNav | async) ? 'show' : 'hide' ">
+<div class="sideNav" [@toggoleSideNav]="toggoleNav ? 'show' : 'hide' ">
     
     <div class="sideNav__head">
         <svg class="sideNav__icon sideNav__icon--close"  (click)="toggoleSideNav($event)">
@@ -41,7 +41,7 @@
                 <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/new')">New</a></li>
                 <li class="sideNav__menue-item">
                     <button class="sideNav__menue__link"
-                    (click)="toggoleSubMenu('catalog')"
+                    (click)="toggoleSubMenu('catalog', $event)"
                     [ngClass]="{'active' : subMenue.catalog}">
                         <p>Catalog</p>
                         <i *ngIf=" !subMenue.catalog.isOpened" nz-icon nzType="plus" nzTheme="outline"></i>
@@ -65,7 +65,7 @@
                 <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/favorites')">Favorite</a></li>
                 <li class="sideNav__menue-item">
                     <button class="sideNav__menue__link"
-                    (click)="toggoleSubMenu('projects')"
+                    (click)="toggoleSubMenu('projects', $event)"
                     [ngClass]="{'active' : subMenue.projects}">
                         <p>Projects</p>
                         <i *ngIf="!subMenue.projects.isOpened" nz-icon nzType="plus" nzTheme="outline"></i>
@@ -79,7 +79,7 @@
                 <li class="sideNav__menue-item">
                     <button 
                     class="sideNav__menue__link" 
-                    (click)="toggoleSubMenu('buyers')"
+                    (click)="toggoleSubMenu('buyers', $event)"
                     [ngClass]="{'active' : subMenue.buyers}">
                         <p>For Buyers</p>
                         <i *ngIf="!subMenue.buyers.isOpened" nz-icon nzType="plus" nzTheme="outline"></i>

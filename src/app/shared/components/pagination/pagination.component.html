@@ -1,14 +1,22 @@
-<div class="pagination">
+<div class="pagination" *ngIf="!(totalItems <= pagData?.pageSize)">
     <button class="pagination__prev"> 
         <svg class="pagination__arrow">
             <use xlink:href="../../../../assets/img/sprite.svg#icon-left-arrow"></use>
         </svg>
     </button>
 
-    <div class="pagination__btns-wrap">
+    <div class="pagination__btns-wrap" *ngIf="loadedComponent === 'bestseller'">
         <button [ngClass]="{'active': pagData?.currentPage == 1}" (click) ="setPaginate(1)" class="pagination__btn">1</button>
         <button [ngClass]="{'active': pagData?.currentPage == 2}" (click) ="setPaginate(2)" class="pagination__btn">2</button>
         <button [ngClass]="{'active': pagData?.currentPage == 3}" (click) ="setPaginate(3)" class="pagination__btn">3</button>
+    </div>
+
+    <div class="pagination__btns-wrap" *ngIf="loadedComponent === 'catalog'">
+        <button 
+        *ngFor="let pageNum of pagData?.pages; let i =index"
+        [ngClass]="{'active': pagData?.currentPage == (i + 1)}" 
+        (click) ="setPaginate(pageNum)" 
+        class="pagination__btn">{{i+1}}</button>
     </div>
 
     <button class="pagination__next"> 

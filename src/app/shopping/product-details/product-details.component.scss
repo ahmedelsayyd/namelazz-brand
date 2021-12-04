@@ -39,6 +39,10 @@
             margin-right: 1rem;
             flex: 0 0 15%;
 
+            .swiper-slide{
+                height: auto;
+            }
+
             img{
                 margin-bottom: 1rem;
                 transition: all .3s;
@@ -50,14 +54,6 @@
             }
         }
 
-        &__info{
-
-            //font-size: 1.3rem;
-        }
-
-        &__sub-name{
-
-        }
 
         &__name{
             margin-bottom: 0;
@@ -154,30 +150,42 @@
             border-bottom: 1px solid rgba($color-dark-500, .5);
             display: flex;
 
-            .btn-to-cart{
- 
-            }
 
             .btn-to-fav{
-                padding: 1rem 1rem;
-                background-color: $color-dark-500;
-                border: none;
+                padding: .5rem .75rem;
+                background-color: transparent;
+                border: 1px solid $color-dark-500;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 transition:  all .3s;
 
+
                 &.active{
-                    background-color: $color-accent;
+                    border: 1px solid $color-accent;                }
+
+                .fav-wraper{
+                    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                    background-color: $color-dark-500;
+                    transition:  all .2s;
+
+                    &.active{
+                        background-color: $color-accent;
+                    }
                 }
+
                 .fav{
                     width: 2rem;
                     height: 2rem;
-                    fill: $color-primary;
-
+                    fill: none;
+                    
                 }
 
                 &:hover{
+                    border: 1px solid $color-accent;
+                }
+
+                &:hover .fav-wraper{
                     background-color: $color-accent;
                 }
             }
@@ -212,9 +220,6 @@
                 display: flex;
                 flex-direction: column;
 
-                span{
-
-                }
             }
         }
 
@@ -270,9 +275,7 @@
         flex-direction: column;
         align-items: center;
 
-        &-icon{
 
-        }
 
         &-handel{
             font-size: 1.65rem;

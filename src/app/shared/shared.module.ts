@@ -6,10 +6,12 @@ import { PaginationService } from "./components/pagination/pagination.service";
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { MycurrencyPipe } from "./components/custom.currencypipe";
+import { MycurrencyPipe } from "./pipes/custom.currencypipe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { TrackFocusDirective } from "./track-focus.directive";
+import { TrackFocusDirective } from "./directives/track-focus.directive";
 import { NzIconModule } from "ng-zorro-antd/icon";
+import { DraggingDirective } from './directives/dragging.directive';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 
 
@@ -19,7 +21,9 @@ import { NzIconModule } from "ng-zorro-antd/icon";
         PaginationComponent, 
         CartItemComponent, 
         MycurrencyPipe,
-        TrackFocusDirective],
+        TrackFocusDirective,
+        DraggingDirective,
+        SortByPipe],
 
     imports: [
         CommonModule, 
@@ -42,7 +46,9 @@ import { NzIconModule } from "ng-zorro-antd/icon";
         NzSelectModule, 
         FormsModule, 
         ReactiveFormsModule,
-        NzIconModule
+        NzIconModule,
+        DraggingDirective
+
     ],
     providers: [PaginationService],
 })

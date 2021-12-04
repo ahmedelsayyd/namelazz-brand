@@ -48,8 +48,12 @@
                             <label class="animate-label mb-0" for="textarea">Message</label>
                         </div>
     
-                        <div class="form__group">
+                        <div class="form__group mb-0">
                             <button class="button button--lg" type="submit">send</button>
+                        </div>
+
+                        <div class="paragraph paragraph--long mt-2">
+                            By clicking the Send button I accept the user agreement and <a class="link link--dashed" routerLink="/pages/privacy">personal data</a>
                         </div>
                     </form>
                 </div>
@@ -70,10 +74,22 @@
                         </div>
                     </div>
 
-                    <div class="our-shop__gallery"></div>
+                    <div class="our-shop__gallery mt-5">
+                        <swiper class="swiper mb-4" [config]="config1" #swiper1>
+                            <div class="swiper-wrapper">
+                                <img class="swiper-slide" *ngFor="let img of store1Img" [src]="img"/>
+                            </div>
+                          
+                            <!-- Add Arrows -->
+                        </swiper>
+                        <div class="swiper__nav">
+                            <div class="swiper-button-prev1" #btnPrev (click)="previousSlide1()"></div>
+                            <div class="swiper-button-next1" #btnNext  (click)="nextSlide1()"></div>
+                        </div>
+                    </div>
                     
 
-                    <div class="our-shop__map mt-5">
+                    <div class="our-shop__map mt-6">
                         <agm-map [latitude]="lat" [longitude]="lng">
                             <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
                           </agm-map>
@@ -93,11 +109,23 @@
                         </div>
                     </div>
 
-                    <div class="our-shop__gallery">
-                        <!-- // "@angular-devkit/build-angular": "^13.0.1", -->
+                    <div class="our-shop__gallery mt-5">
+                        
+                        <swiper class="swiper mb-4" [config]="config2" #swiper2>
+                            <div class="swiper-wrapper">
+                                <img class="swiper-slide" *ngFor="let img of store2Img" [src]="img"/>
+                            </div>
+                          
+                        </swiper>
+                        <!-- Add Arrows -->
+                        <div class="swiper__nav">
+                            <div class="swiper-button-prev2" #btnPrev  (click)="previousSlide2()"></div>
+                            <div class="swiper-button-next2" #btnNext (click)="nextSlide2()"></div>
+                        </div>
                     </div>
 
-                    <div class="our-shop__map mt-5">
+
+                    <div class="our-shop__map mt-6">
                         <agm-map [latitude]="lat" [longitude]="lng">
                             <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
                           </agm-map>

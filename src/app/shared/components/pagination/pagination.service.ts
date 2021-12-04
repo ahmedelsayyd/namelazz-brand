@@ -83,3 +83,15 @@ export class PaginationService {
     }
 
 }
+
+export interface PaginationData{
+    totalItems: number
+    currentPage: number
+    pageSize: number
+    totalPages : number
+    startPage: number
+    endPage: number
+    startIndex: number
+    endIndex: number
+    pages: number[]
+}

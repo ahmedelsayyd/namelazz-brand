@@ -1,9 +1,10 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, NgZone, OnInit, OnDestroy,ElementRef, Inject,} from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { fromEvent, Observable, Subscription } from 'rxjs';
 import { toggoleSideNavtrigger, toggoleDropdowntrigger } from 'src/app/shared/animations/animation';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { UiService } from 'src/app/shared/services/ui.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'side-nav',
@@ -16,9 +17,9 @@ import { UiService } from 'src/app/shared/services/ui.service';
     toggoleDropdowntrigger
   ]
 })
-export class SideNavComponent implements OnInit {
+export class SideNavComponent implements OnInit, OnDestroy{
   slideDown:boolean = false;
-  toggoleNav: Observable<boolean>
+  toggoleNav: boolean
 
   activeSubMenue:string
   subMenue ={
@@ -27,22 +28,49 @@ export class SideNavComponent implements OnInit {
     buyers: {isOpened: false}
   }
 
+  eventSub:Subscription
+  sideNavSub:Subscription
+  
+  // @HostListener('click', ['$event']) click(e) {
+  //   e.stopPropagation();
 
-  @HostListener('click', ['$event']) click(e) {
-    e.stopPropagation();
+  // }
 
-  }
-
-  @HostListener('document:click', ['$event']) resetToggle(e){
-      console.log(e);
+  // @HostListener('document:click', ['$event']) resetToggle(e){
+  //   console.log("onClick");
       
-    this.uiService.openSideNav.next(false)
-  }
+  //   this.uiService.openSideNav.next(false)
+  // }
 
-  constructor(private uiService:UiService, public authService:AuthService, private route:Router) { }
+  constructor(
+    private uiService:UiService, 
+    public authService:AuthService, 
+    private route:Router,
+    private zone: NgZone,
+    private elRef: ElementRef,
+    @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit(): void {
-    this.toggoleNav = this.uiService.openSideNav;
+
+    this.setupClickListener();
+
+    this.sideNavSub = this.uiService.openSideNav.subscribe((status)=>{
+      this.toggoleNav = status
+    });
+  }
+
+  private setupClickListener() {
+    this.zone.runOutsideAngular(() => {
+
+      this.eventSub = fromEvent(this.document, "click").subscribe((e:MouseEvent) => {
+
+        if (!this.elRef.nativeElement.contains(e.target) && this.toggoleNav) {
+          this.zone.run(() => {
+            this.uiService.openSideNav.next(false)
+          });
+        }
+      });
+    })
   }
 
 
@@ -52,7 +80,8 @@ export class SideNavComponent implements OnInit {
   }
 
 
-  toggoleSubMenu(menuName){
+  toggoleSubMenu(menuName, e){
+    e.stopPropagation();
     for(let i in this.subMenue){
       if(i == menuName){
         
@@ -82,8 +111,10 @@ export class SideNavComponent implements OnInit {
     }
   }
 
-}
-function HostListner(arg0: string) {
-  throw new Error('Function not implemented.');
-}
 
+
+  ngOnDestroy(){
+    if(this.eventSub) this.eventSub.unsubscribe()
+    if(this.sideNavSub) this.sideNavSub.unsubscribe()
+  }
+}

@@ -12,6 +12,9 @@ import { PlaceOrderComponent } from './place-order/place-order.component';
 import { WarrantyPeriodComponent } from './warranty-period/warranty-period.component';
 import { OrderTrackingComponent } from './order-tracking/order-tracking.component';
 import { AgmCoreModule } from "@agm/core";
+import { NgxUsefulSwiperModule } from "ngx-useful-swiper";
+import { CommonModule } from "@angular/common";
+
 
 @NgModule({
     declarations: [
@@ -26,16 +29,18 @@ import { AgmCoreModule } from "@agm/core";
         PlaceOrderComponent,
         WarrantyPeriodComponent,
         OrderTrackingComponent,
-  
+        
     ],
 
     imports: [
+        CommonModule,
         PagesRoutingModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyAkJSVNNQ7MQLyTnyk7b4maicV7CC3eCPU'
         }),
-
-    ],
+        NgxUsefulSwiperModule
+    ],  
+    
     
     exports:[],  
 

@@ -45,9 +45,11 @@ export const toggoleSideNavtrigger = trigger('toggoleSideNav', [
 export const toggoleDropdowntrigger = trigger('toggoleDropdown', [
     state('hide', style({
         maxHeight: '0',
+        paddingTop: '0',
+        paddingBottom: '0'
     })),
     state('show', style({
-        maxHeight: '100%',
+        maxHeight: '*',
     })),
 
     transition('hide=>show', [

@@ -4,7 +4,7 @@ import { HomeComponent } from './core/home/home.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  //{ path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
+  // { path: 'catalog', loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingModule) }
 ];
 
 @NgModule({

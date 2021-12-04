@@ -1,4 +1,4 @@
-<nav class="navigation">
+<nav class="navigation" [@navBarAnimation]="(loadedComponent| async) =='home'? '' : 'animate' ">
     <div class="row h-100 m-0">
         <div class="col-md-3 h-100 navigation__group">
             <div class="navigation__menu" (click)="openSideNav($event)">
@@ -94,7 +94,7 @@
 ---------------LOGIN POPUP------------- -->
 
 <div class="login" >
-    <div class="login__card" [@toggoleLoginCard]="(showLoginCard | async) ? 'show' : 'hide' ">
+    <div class="login__card" [@toggoleLoginCard]="showLoginCard  ? 'show' : 'hide' ">
             <svg class="login__icon login__icon--close" stopPrpagation (click)="this.uiService.ToggoleLoginCard.next(false)">
                 <use xlink:href="../../../assets/img/sprite.svg#icon-clear"></use>
             </svg>

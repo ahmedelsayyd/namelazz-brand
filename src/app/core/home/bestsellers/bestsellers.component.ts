@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { first, map, switchMap, take} from 'rxjs/operators';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { switchMap, take} from 'rxjs/operators';
 import { PaginationService } from 'src/app/shared/components/pagination/pagination.service';
 import { Product } from 'src/app/shared/models/product.model';
 
@@ -9,7 +9,7 @@ import { Product } from 'src/app/shared/models/product.model';
   templateUrl: './bestsellers.component.html',
   styleUrls: ['./bestsellers.component.scss']
 })
-export class BestsellersComponent implements OnInit {
+export class BestsellersComponent implements OnInit, OnDestroy {
   @Input() products:Observable<Product[]>
   @Input() loadedComponent;
   filteredProducts: Product[]=[]
@@ -17,11 +17,17 @@ export class BestsellersComponent implements OnInit {
   startIndex
   endIndex
   pagData
-  constructor(private PaginationService: PaginationService) { }
+
+  productSub:Subscription
+
+
+  constructor(private PaginationService: PaginationService) { 
+    
+  }
 
   ngOnInit(): void {
 
-    this.products.pipe(take(1))
+    this.productSub = this.products.pipe(take(1))
     .pipe(switchMap((p) => {
       this.filteredProducts = p.slice(0,9)
       return this.PaginationService.currentPageDetails
@@ -33,5 +39,12 @@ export class BestsellersComponent implements OnInit {
         this.startIndex = this.pagData.startIndex;
         this.endIndex = this.pagData.endIndex;
     }) 
+
   }
+
+
+  ngOnDestroy(){
+    if(this.productSub) this.productSub.unsubscribe()
+  }
+
 }

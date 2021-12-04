@@ -43,7 +43,7 @@
         <div class="row justify-content-center">
 
             <div class="bestseller__pagination">
-                <pagination></pagination>
+                <pagination [loadedComponent]="'bestseller'" [totalItems]="items.length - 1" [pageSize]="3"></pagination>
             </div>
         </div>
     </div>

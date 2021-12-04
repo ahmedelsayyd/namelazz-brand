@@ -1,8 +1,10 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, ElementRef, Inject, NgZone, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { Observable } from 'rxjs';
+import { fromEvent, Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { navBarAnimationtrigger } from 'src/app/shared/animations/header.animation';
 import { Cart } from 'src/app/shared/models/cart.model';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -17,28 +19,32 @@ import { toggoleLoginCardtrigger } from '../../shared/animations/animation';
   animations: [
 
     //annimations trigger
-    toggoleLoginCardtrigger
+    toggoleLoginCardtrigger,
+    navBarAnimationtrigger
   ]
 })
 export class NavigationComponent implements OnInit {
+  loadedComponent: Observable<string>
 
-  showLoginCard: Observable<boolean>
+  showLoginCard: boolean
   cart$:Observable<Cart>
   favProductsCount$:Observable<number>
 
   emailInputfilled
   router: any;
+  
+  eventSub:Subscription
+  loginCardSub:Subscription
 
+  // @HostListener('click', ['$event']) click(e) {
+  //   e.stopPropagation();
 
-  @HostListener('click', ['$event']) click(e) {
-    e.stopPropagation();
+  // }
 
-  }
-
-  @HostListener('document:click', ['$event']) resetToggle(e){
+  // @HostListener('document:click', ['$event']) resetToggle(e){
       
-    this.uiService.ToggoleLoginCard.next(false)
-  }
+  //   this.uiService.ToggoleLoginCard.next(false)
+  // }
 
 
   constructor(
@@ -46,7 +52,10 @@ export class NavigationComponent implements OnInit {
     private cartService:ShoppingCartService,
     private productService:ProductService,
     private msg: NzMessageService,
-    public uiService: UiService) { }
+    public uiService: UiService,
+    private zone: NgZone,
+    private elRef: ElementRef,
+    @Inject(DOCUMENT) private document: any) { }
 
   async ngOnInit() {
 
@@ -58,9 +67,33 @@ export class NavigationComponent implements OnInit {
           return arr.length
       }))
 
-      this.showLoginCard = this.uiService.ToggoleLoginCard
+
+      this.loginCardSub = this.uiService.ToggoleLoginCard.subscribe(status=>{
+        this.showLoginCard = status
+      })
   
+
+      // Get Loaded Component
+      this.loadedComponent = this.uiService.loadedComponent$;
+
+      this.setupClickListener()
   }
+
+
+  private setupClickListener() {
+    this.zone.runOutsideAngular(() => {
+
+      this.eventSub = fromEvent(this.document, "click").subscribe((e:MouseEvent) => {
+
+        if (!this.elRef.nativeElement.contains(e.target) && this.showLoginCard) {
+          this.zone.run(() => {
+            this.uiService.ToggoleLoginCard.next(false)
+          });
+        }
+      });
+    })
+  }
+
 
   openSideNav(e){
     e.stopPropagation()
@@ -105,5 +138,10 @@ export class NavigationComponent implements OnInit {
     }else{
       this.emailInputfilled = false
     }
+  }
+
+  ngOnDestroy(){
+    if(this.eventSub) this.eventSub.unsubscribe()
+    if(this.loginCardSub) this.loginCardSub.unsubscribe()
   }
 }

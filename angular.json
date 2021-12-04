@@ -36,6 +36,7 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/intl-tel-input/build/css/intlTelInput.css",
               "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "./node_modules/swiper/swiper-bundle.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -111,6 +112,7 @@
               "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/intl-tel-input/build/css/intlTelInput.css",
+              "./node_modules/swiper/swiper-bundle.css",
               "src/styles.scss"
             ],
             "scripts": []

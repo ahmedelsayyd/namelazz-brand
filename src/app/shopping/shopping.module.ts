@@ -13,7 +13,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { NewProductsComponent } from './new-products/new-products.component';
 import { SaleComponent } from './sale/sale.component';
 import { SoonComponent } from './soon/soon.component';
-
+import { NouisliderModule } from 'ng2-nouislider';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 @NgModule({
     declarations: [
@@ -35,8 +36,9 @@ import { SoonComponent } from './soon/soon.component';
         ReactiveFormsModule,
         FormsModule,
         CommonModule,
-        SharedModule
-
+        SharedModule,
+        NouisliderModule,
+        NzToolTipModule
     ],
     exports: []
 })

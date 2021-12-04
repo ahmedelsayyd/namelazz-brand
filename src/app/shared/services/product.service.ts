@@ -14,7 +14,7 @@ export class ProductService {
   constructor(private fs:AngularFirestore) {
     // this.getAllProducts().subscribe(p=>{
     //   p.forEach(x=>{
-    //     this.editProduct(x.id, {inCart:false})
+    //     this.editProduct(x.id, {isFavorite:false})
     //   })
     // })
 

@@ -1,18 +1,18 @@
 
-<div class="category">
+<div class="catalog">
     <div class="container">
         <div class="row">
-            <div class="category__heading">
-                <span class="category__heading--sub paragraph paragraph--short">main page / <strong>catalog</strong></span>
-                <h3 class="category__heading--main sub-heading"> Catalog</h3>
+            <div class="catalog__heading">
+                <span class="catalog__heading--sub paragraph paragraph--short">main page / <strong>catalog</strong></span>
+                <h3 class="catalog__heading--main sub-heading"> Catalog</h3>
                 <hr class="m-0">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-2 pl-0 pr-4">
-                <div class="category__filter">
-                    <div class="category__filter-list">
+                <div class="catalog__sideBar">
+                    <div class="catalog__list">
                         <ul>
                             <li class=""><a class="" routerLink="/catalog/all" routerLinkActive="active" router>All</a></li>
                             <li class=""><a class="" routerLink="/catalog/dresses" routerLinkActive="active">Dresses</a></li>
@@ -30,10 +30,157 @@
             </div>
 
             <div class="col-md-10">
-                <div class="category__products">
+
+                <div class="catalog__filters ">
+
+
+                        <div class="filter__filterBy"  #filterModal (click)="toggoleFilterDropdown = !toggoleFilterDropdown">
+    
+                            <div class="filter__title">
+                                Filter 
+                                <span  class="filter__result"><strong>{{(selectedFiltersString$ | async)}}</strong></span>
+                                <i nz-icon nzType="down"></i>
+                            </div>
+    
+                            
+                            <div class="filter__modal filter__modal-filterBy"  [@toggoleDropdown]="toggoleFilterDropdown ? 'show' : 'hide'">
+                                <form >
+                                    <fieldset>
+                                        <div class="filter__name" (click)="changeMenuStatus('color', $event)">
+                                            <i *ngIf="!filterMenues.color.isOpen" nz-icon nzType="down"></i>
+                                            <i *ngIf="filterMenues.color.isOpen" nz-icon nzType="minus"></i>
+                                            Color
+                                        </div>
+                                        <div class="filter__options"  [@toggoleDropdown]="filterMenues.color.isOpen ? 'show' : 'hide'" (click)="$event.stopPropagation();">
+    
+                                            <label [for]="'color_'+i" class="filter__label" 
+                                            (click)="$event.stopPropagation();" 
+                                            *ngFor="let color of productAttrs.colors; let i=index"> 
+                                                <input 
+                                                (change)="onFilterChange('color', color.name,i)"
+                                                type="checkbox" 
+                                                [id]="'color_'+i" 
+                                                class="filter__input filter__input--color" 
+                                                [ngStyle]="{'backgroundColor':color.code}"
+                                                [value]="color.name"> {{color.name}}
+                                            </label>
+                                        </div>
+                                    </fieldset>
+    
+    
+                                    <fieldset>
+                                        <div class="filter__name" (click)="changeMenuStatus('price', $event)">
+                                            <i *ngIf="!filterMenues.price.isOpen" nz-icon nzType="down"></i>
+                                            <i *ngIf="filterMenues.price.isOpen" nz-icon nzType="minus"></i>
+                                            price
+                                        </div>
+                                        <div class="filter__price" [@toggoleDropdown]="filterMenues.price.isOpen ? 'show' : 'hide'" (click)="$event.stopPropagation();">
+
+                                            <div class="filter__cost">
+                                                <div class="filter__cost__val">
+                                                    <input id="minCost" type="number" class="filter__cost__input" name="minPrice" [(ngModel)]="minPrice">
+                                                    <label class="filter__cost__label" for="minCost">ot</label>
+                                                    <span class="filter__cost__curr">$</span>
+                                                </div>
+                                                <div class="filter__cost__val">
+                                                    <input id="maxCost" type="number" class="filter__cost__input" name="maxPrice" [(ngModel)]="maxPrice">
+                                                    <label class="filter__cost__label" for="maxCost">ot</label>
+                                                    <span class="filter__cost__curr">$</span>
+                                                </div>
+
+                                            </div>
+                                            <nouislider class="mt-5" [config]="nouisliderConfig" [connect]="true" (ngModelChange)="priceChange($event)" name="priceRange" [(ngModel)]="priceRange"></nouislider>
+
+                                            <!-- <div class="filter__cost">
+                                            </div>
+                                            <div class="filter__rang">
+                                                <div class="filter__rang__bar"></div>
+                                                <span class="filter__rang__handel filter__rang__handel--min" Dragging [elRendered]="filterMenues.price.isOpen"></span>
+                                                <span class="filter__rang__handel filter__rang__handel--max"></span>
+                                            </div> -->
+                                        </div>
+                                    </fieldset>
+    
+    
+                                    <fieldset>
+                                        <div class="filter__name" (click)="changeMenuStatus('size', $event)">
+                                            <i *ngIf="!filterMenues.size.isOpen" nz-icon nzType="down"></i>
+                                            <i *ngIf="filterMenues.size.isOpen" nz-icon nzType="minus"></i>
+                                            size
+                                        </div>
+
+                                        <div class="filter__options" [@toggoleDropdown]="filterMenues.size.isOpen ? 'show' : 'hide'" (click)="$event.stopPropagation();">
+                                            <label [for]="'size_'+i" class="filter__label" 
+                                            (click)="$event.stopPropagation();" 
+                                            *ngFor="let size of productAttrs.sizes; let i=index">
+                                                <input 
+                                                (change)="onFilterChange('size', size, i)"
+                                                type="checkbox" 
+                                                [id]="'size_'+i"  
+                                                class="filter__input filter__input--size" 
+                                                [value]="size"> {{size}}
+                                            </label>'
+                                        </div>
+                                    </fieldset>
+    
+    
+                                    <fieldset>
+                                        <div class="filter__name" (click)="changeMenuStatus('material', $event)">
+                                            <i *ngIf="!filterMenues.material.isOpen" nz-icon nzType="down"></i>
+                                            <i *ngIf="filterMenues.material.isOpen" nz-icon nzType="minus"></i>
+                                            material
+                                        </div>
+                                        <div class="filter__options" [@toggoleDropdown]="filterMenues.material.isOpen ? 'show' : 'hide'" (click)="$event.stopPropagation();">
+                                            <label [for]="'matrial_'+i" class="filter__label" 
+                                            (click)="$event.stopPropagation();" 
+                                            *ngFor="let matrial of productAttrs.materials; let i=index">
+                                                <input
+                                                (change)="onFilterChange('material', matrial,i)" 
+                                                type="checkbox" 
+                                                [id]="'matrial_'+i"  
+                                                class="filter__input filter__input--size" 
+                                                [value]="matrial"> 
+                                                {{matrial}}
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            
+                            </div>
+                          
+                        </div>
+    
+                        <div class="filter__sortBy" #sortModal (click)="toggoleSortDropdown = !toggoleSortDropdown">
+    
+                            <div class="filter__title" >
+                                Sorted by 
+                                <span  class="filter__result"><strong>{{(selectedSortString$ | async)}}</strong></span>
+                                <i nz-icon nzType="down"></i>
+                            </div>
+    
+                            <div class="filter__modal filter__modal-sortBy"  [@toggoleDropdown]="toggoleSortDropdown ? 'show' : 'hide'">
+    
+                                <div class="filter__option" 
+                                (click)="onFilterChange('sorting',option, i)"
+                                *ngFor="let option of filters.sortBy; let i=index">
+                                    <span>{{option.name}}</span>
+                                </div>
+
+    
+                            </div>
+                        </div>
+                </div>
+
+                <div class="catalog__products" *ngIf="filteredProducts">
                     <div class="row">
-                        <div class="col-md-4 mb-5" *ngFor="let p of filterProducts">
+                        <div class="col-md-4 mb-5" *ngFor="let p of displayedProducts">
                             <product-card [product]="p" [loadedComponent]="'categories'"></product-card>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="catalog__pagination">
+                            <pagination [loadedComponent]="'catalog'" [totalItems]="filteredProducts?.length" [pageSize]="pageSize"></pagination>
                         </div>
                     </div>
                 </div>
@@ -41,5 +188,29 @@
         </div>
 
 
+      
+
+        
+        <div class="row">
+            <div class="catalog__instagram">
+                <div class="catalog__intagram-icon">
+
+                </div>
+                <h2 class="sub-heading">follow Us On instagram</h2>
+                <div class="catalog__instagram-handel  paragraph paragraph--short">&#64;namelazz</div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="catalog__gallary">
+        <div class="row no-gutters">
+            <div class="col-md-3"><img src="../../../../assets/img/home/gallery-1.jpg" alt=""></div>
+            <div class="col-md-3"><img src="../../../../assets/img/home/gallery-2.jpg" alt=""></div>
+            <div class="col-md-3"><img src="../../../../assets/img/home/gallery-3.jpg" alt=""></div>
+            <div class="col-md-3"><img src="../../../../assets/img/home/gallery-4.jpg" alt=""></div>
+        </div>
     </div>
 </div>

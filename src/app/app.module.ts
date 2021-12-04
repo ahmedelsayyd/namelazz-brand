@@ -58,8 +58,7 @@ registerLocaleData(en);
     HttpClientModule,
     AdminModule,
     IconsProviderModule,
-    NzIconModule
-
+    NzIconModule,
 
 
   ],

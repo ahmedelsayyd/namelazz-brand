@@ -54,15 +54,22 @@
                         <button class="button button--lg" 
                         (click)="addToCart()" 
                         *ngIf="!product?.inCart" 
-                        trackFocus [isSelected]="selectedSize ? true : false">
+                        trackFocus 
+                        [isSelected]="selectedSize ? true : false">
                         ADD TO CART</button>
 
                         <button class="button button--lg button--transparent" *ngIf="product?.inCart" routerLink="/cart">CHECK OUT</button>
                         
-                        <button class="btn-to-fav" [ngClass]="{'active': product?.isFavorite === true}"  (click)="addToFavorite(product)">
-                            <svg class="fav">
-                                <use xlink:href="../../../assets/img/sprite.svg#icon-star-la"></use>
-                            </svg>
+                        <button 
+                        class="btn-to-fav" 
+                        [nzTooltipTitle]="product?.isFavorite? 'unlike' : 'like'" nzTooltipPlacement="right" nz-tooltip
+                        [ngClass]="{'active': product?.isFavorite === true}" 
+                        (click)="addToFavorite(product)">
+                            <div class="fav-wraper" [ngClass]="{'active': product?.isFavorite === true}">
+                              <svg class="fav">
+                                    <use xlink:href="../../../assets/img/sprite.svg#icon-star-la"></use>
+                                </svg>
+                            </div>
                         </button>
                     </div>
 

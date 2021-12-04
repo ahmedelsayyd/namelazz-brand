@@ -1,42 +1,317 @@
 @import '../../../styles/variable.scss';
 
-.category{
-    padding: 16rem 0;
+.catalog{
+    padding-top: 16rem;
     background-color: $color-primary;
+
     &__heading{
         margin-bottom: 4rem;
         width: 100%;
 
     }
 
-    &__filter{
 
-        &-list{
+    &__list{
 
-            ul{
-                list-style: none;
-                padding: 0;
-                li{
-                    margin-bottom: .75rem;
+        ul{
+            list-style: none;
+            padding: 0;
+            li{
+                margin-bottom: .75rem;
 
-                    a{
-                        color: $color-dark-500;
-                        font-size: 1.4rem;
-                        letter-spacing: .75px;
-                        text-transform: uppercase;
-                        font-weight: 600;
-                        text-underline-offset: 3px;
-                    }
+                a{
+                    color: $color-dark-500;
+                    font-size: 1.4rem;
+                    letter-spacing: .75px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    text-underline-offset: 3px;
+                }
 
-                    .active{
-                        text-decoration: underline;
-                    }
+                .active{
+                    text-decoration: underline;
                 }
             }
         }
+    }
 
+
+
+    &__filters{
+        position: relative;
+        display: flex;
+        color: $color-dark-100;
+        padding: .4rem 0;
+        margin-bottom: 4rem;
+        border-bottom: 1px solid rgba(#000, .2);
+        font-size: 1.4rem;
+
+
+        .filter{
+
+            &__title{
+                display: flex;
+                align-items: center;
+                gap: .35rem;
+                cursor: pointer;
+                i{
+                    font-size: 1.1rem;
+                }
+            }
+
+
+            &__filterBy{
+                display: flex;
+                align-items: center;
+                margin-right: auto;
+            }
+
+            &__sortBy{
+                cursor: pointer;
+            }
+
+            &__modal{
+                position: absolute;
+                top: 140%;
+                height: auto;
+                background-color: $color-primary;
+                box-shadow: 0 2rem 4rem  rgba($color-accent-dark, .25);
+                z-index: 5;
+                overflow: hidden;
+                color: $color-dark-500;
+
+                &-filterBy{
+                    left: 0;
+                    width: 40rem;
+                }
+
+                &-sortBy{
+                    right: 0;
+                    padding: 1rem 2rem 1.75rem 2rem;
+                    width: 25rem;
+                }
+
+
+                form{
+                    padding: 2rem 2.5rem 4rem 2.5rem;
+                }
+            }
+
+            &__name{
+                display: flex;
+                align-items: center;
+                padding: 2rem 0;
+                border-bottom: 1px solid rgba(#000, .2);
+                text-transform: uppercase;
+                cursor: pointer;
+
+                i{
+                    margin-right: 1.5rem;
+                }
+            }
+
+            &__options{
+                overflow: hidden;
+                padding: 2rem 0 2rem 3rem ;
+            }
+
+            &__option{
+                padding: .75rem 0;
+                border-bottom: 1px solid rgba(#000, .2);
+                text-transform: uppercase;
+                cursor: pointer;
+                text-align: center;
+                letter-spacing: 1px;
+            }
+
+            &__input{
+
+                position: relative;
+                visibility: hidden;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid $color-dark-300;
+                    display: inline-block;
+                    visibility: visible;
+                }
+
+
+                &--color{
+
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    background-color: lightcoral;
+                    &::before{
+                        background-color: inherit;
+                        border-radius: 50%;
+                    }
+
+                    &:checked::before{
+                        box-shadow: 0 0 0 .4rem $color-primary, 0 0 0 .5rem $color-dark-500;
+                    }
+                }
+
+
+                &--size{
+                    width: 1.8rem;
+                    height: 1.8rem;
+
+                    &:checked::before{
+                        box-shadow: inset 0 0 0 .3rem $color-primary, inset 0 0 0 .8rem $color-dark-500;
+                    }
+                }
+            }
+
+            &__label{
+
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                text-transform: uppercase;
+                span{
+
+                }
+            }
+
+
+            // Filter Price
+
+            &__price{
+                padding: 3.75rem;
+                overflow: hidden;
+            }
+
+            &__cost{
+                display: flex;
+                justify-content: center;
+                gap: 1.2rem;
+
+
+                &__val{
+                    position: relative;
+                    color: $color-dark-300;
+                    display: flex;
+                    align-items: center;
+                    flex: 0 0 33%;
+
+                }
+
+                &__label{
+                    position: absolute;
+                    left: 1rem;
+                    margin-bottom: 0;
+                    color: rgba($color-accent-dark, .6)
+                }
+
+                &__input{
+                    padding: 1rem 1.8rem 1rem 2.8rem;
+                    border: 1px solid rgba(#000, .2);
+                    width: 100%;
+
+                    &:focus{
+                        outline: none;
+                    }
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        /* display: none; <- Crashes Chrome on hover */
+                        -webkit-appearance: none;
+                        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+                    }
+
+                    &[type=number] {
+                        -moz-appearance:textfield; /* Firefox */
+}
+                }
+
+                &__curr{
+                    position: absolute;
+                    right: .8rem;
+                }
+            }
+
+
+            &__rang{
+                height: 2px;
+                width: 100%;
+                background-color: #e0e0e0;
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin-top: 3.5rem;
+
+                &__bar{
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    background-color: $color-dark-500;
+                }
+
+                &__handel{
+                    position: absolute;
+                    display: inline-block;
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    border-radius: 50%;
+                    background-color: $color-dark-300;
+                    cursor: pointer;
+
+                    &--min{
+                        left: 0;
+                    }
+
+                    &--max{
+                        left: 100%;
+                    }
+                }
+            }
+
+
+
+           
+        }
 
     }
+
+    ::ng-deep .noUi-target{
+        height: 2px;
+        border: none;
+            background: #c3c0c0;
+
+        .noUi-handle{
+            box-shadow: none;
+            border: none;
+            border-radius: 50%;
+            height: 1.75rem;
+            width: 1.75rem;
+            background-color: $color-dark-300;
+
+            &::before,&::after{
+                display: none;
+            }
+        }
+
+        .noUi-connect{
+            background: $color-dark-300;
+        }
+
+        //  .noUi-origin{
+        //     display: flex;
+        //     align-items: center;
+        // }
+
+        .noUi-handle{
+            top: -8px;
+        }
+    }
+
 
     &__products{
 
@@ -68,5 +343,46 @@
         
     }
 
+
+    &__pagination{
+        margin-top: 4.5rem;
+    }
+
+
+    &__instagram{
+        width: 100%;
+        margin: 15rem 0 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-icon{
+
+        }
+
+        &-handel{
+            font-size: 1.65rem;
+            letter-spacing: .75px;
+            cursor: pointer;
+            transition: all .2s;
+
+            &:hover{
+                letter-spacing: 1.4px;
+                color: $color-accent-dark;
+                font-weight: 600;
+            }
+        }
+
+    }
+
+
+    &__gallary{
+
+        img{
+            width: 100%;
+            height: 35rem;
+            object-fit: cover;
+        }
+    }
 
 }

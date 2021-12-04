@@ -1,32 +1,60 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PaginationService } from './pagination.service';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { PaginationData, PaginationService } from './pagination.service';
 
 @Component({
   selector: 'pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
-export class PaginationComponent implements OnInit {
- pagData  
+export class PaginationComponent implements OnInit, OnDestroy {
+ 
+totalItems$= new BehaviorSubject<number>(0)
+
+ @Input() loadedComponent: string
+ @Input() pageSize: number
+ @Input() set totalItems(value: number) { 
+            this.totalItems$.next(value); 
+          }
+
+ get totalItems(){
+   return this.totalItems$.getValue()
+ }
+
+  pagData: PaginationData  
+
+  pagSub:Subscription
+  totalItemsSub:Subscription
 
   constructor(private PaginationService: PaginationService) {
-        // initiate pagtination
-        this.setPaginate(1)
+
    }
 
   ngOnInit(): void {
 
+    setTimeout(()=>{
 
-    this.PaginationService.paginate(9, 1, 3)
-  }
+      this.totalItemsSub = this.totalItems$.subscribe(x=>{
+        
+        this.setPaginate(1)
+      })
+    })
 
-  setPaginate(num) {
-    this.PaginationService.paginate(9, num, 3)
-    this.PaginationService.currentPageDetails
-    .subscribe(data =>{
+
+    this.pagSub = this.PaginationService.currentPageDetails
+    .subscribe((data: PaginationData) =>{
       this.pagData = data
-    }) 
+    })
   }
 
+  setPaginate(currPage) {    
+    this.PaginationService.paginate(this.totalItems, currPage, this.pageSize)
+ 
+  }
+
+  ngOnDestroy(){
+    if(this.pagSub) this.pagSub.unsubscribe()
+    if(this.totalItemsSub) this.totalItemsSub.unsubscribe()
+  }
 
 }

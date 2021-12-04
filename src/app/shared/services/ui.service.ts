@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
+import { ElementRef, Inject, Injectable, NgZone } from '@angular/core';
+import { BehaviorSubject, fromEvent, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,12 @@ export class UiService {
   loadedComponent$ = this.loadedComponent.asObservable()
   scrollTopValue$ = this.scrollTopValue.asObservable()
 
-  constructor() {
+  toggoleDropdown: boolean;
+
+  constructor(    
+    private zone: NgZone,
+
+    @Inject(DOCUMENT) private document: any) {
 
   }
 
@@ -40,7 +46,7 @@ export class UiService {
       document.documentElement.style.setProperty('--nav-height', 8 + 'rem')
 
       return;
-    } else if (loadedComponent != "home" && loadedComponent != "UserComponent" && scrollTop > 5) {
+    } else if (loadedComponent != "home" && loadedComponent != "UserComponent" && scrollTop >= 5) {
 
       document.documentElement.style.setProperty('--nav-background', '#fbf6f2')
       document.documentElement.style.setProperty('--nav-color', '#1a1615')
@@ -49,7 +55,7 @@ export class UiService {
       return;
     }
 
-    if (scrollTop > (window.innerHeight * 3 / 4)) {
+    if (scrollTop >= (window.innerHeight * 3 / 4)) {
 
       document.documentElement.style.setProperty('--nav-background', '#fbf6f2')
       document.documentElement.style.setProperty('--nav-color', '#1a1615')
@@ -66,4 +72,21 @@ export class UiService {
     (loadedComponent != "HomeComponent" ? this.setLoadedComponent(loadedComponent)
       : this.setLoadedComponent('home'));
   }
+
+  
+  // private setupClickListener() {
+  //   this.zone.runOutsideAngular(() => {
+
+  //     fromEvent(this.document, "click").subscribe((e:MouseEvent) => {
+
+  //       if (!this.elRef.nativeElement.contains(e.target) && this.toggoleDropdown) {
+  //         this.zone.run(() => {
+  //           this.toggoleDropdown= !this.toggoleDropdown
+  //         });
+  //       }
+  //     });
+  //   })
+  // }
+
+
 }

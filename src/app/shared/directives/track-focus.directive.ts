@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
-import { UiService } from './services/ui.service';
+import { UiService } from '../services/ui.service';
 
 @Directive({
   selector: '[trackFocus]'
