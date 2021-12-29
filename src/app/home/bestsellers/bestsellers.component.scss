@@ -1,0 +1,110 @@
+@import '../../../styles/variable.scss';
+
+.bestseller{
+    padding: 9rem 0;
+    background-color: $color-primary;
+    @include media-breakpoint-down(xs){padding: 6rem 1.75rem;}
+
+
+    
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 9rem;
+        @include media-breakpoint-down(md){margin-bottom: 7.5rem;}
+        @include media-breakpoint-down(sm){margin-bottom: 7rem;}
+        @include media-breakpoint-down(xs){margin-bottom: 6rem;}
+    }
+
+    &__heading{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    &__products{
+        margin-bottom: 9rem;
+        @include media-breakpoint-down(xs){margin-bottom: 5rem;}
+
+    }
+
+    .product--1{
+        flex: 0 0 22%;
+        @include media-breakpoint-down(md) { flex: 0 0 25%} ;
+        @include media-breakpoint-down(sm) { &.sm-active{flex: 0 0 30%} } ;
+        @include media-breakpoint-down(xs) { &.xs-active{flex: 0 0 45%} } ;
+
+        img{
+            height: 29rem;
+            object-fit: cover;
+        }
+
+        ::ng-deep .product__name{
+            flex:  0  0 60%;
+            @include media-breakpoint-down(sm) { flex: 0 0 68%; font-size: 1.25rem;} ;
+        }
+
+    }
+
+
+    .product{
+
+        ::ng-deep .product:hover .product__button{
+            display: none;
+        }
+
+
+
+        &--2{
+            flex: 0 0 28%;
+            margin-top: 17rem;
+            @include media-breakpoint-down(md) { flex: 0 0 31%; margin-top: 14rem} ;
+            @include media-breakpoint-down(sm) { &.sm-active{flex: 0 0 30%} } ;
+            
+
+            img{
+                height: 38rem;
+                object-fit: cover;
+            }
+    
+            ::ng-deep .product__name{
+                flex:  0  0 66%;
+                @include media-breakpoint-down(sm){ flex:  0 0 60%; font-size: 1.25rem;}
+
+            }
+        }
+    
+        &--3{
+            flex: 0 0 32%;
+            @include media-breakpoint-down(md) { flex: 0 0 35%} ;
+            @include media-breakpoint-down(sm) { &.sm-active{flex: 0 0 30%} } ;
+            @include media-breakpoint-down(xs) { &.xs-active{flex: 0 0 45%} } ;
+
+            img{
+                height: 44rem;
+                object-fit: cover;
+            }
+    
+            ::ng-deep .product__name{
+                flex:  0  0 65%;
+                @include media-breakpoint-down(sm){ flex:  0 0 60%; font-size: 1.25rem;}
+
+            }
+        }
+    }
+
+
+    // &__pagination{
+    //     // height: 3rem;
+    //     // width: 30rem;
+    //     // background-color: black;
+
+    // }
+
+    
+    // .product--3 :host product ::ng-deep .product__name{
+    //     flex:  0  0 35%;
+    // }
+}

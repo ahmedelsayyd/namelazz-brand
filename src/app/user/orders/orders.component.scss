@@ -4,6 +4,7 @@
     padding: 6rem 0;
     min-height: 50vh;
     color: $color-dark-500;
+    @include media-breakpoint-down(md){padding: 6rem 1.5remS;}
 
     &__list{
 
@@ -11,23 +12,44 @@
 
     &__item{
         border-bottom: 1px solid rgba($color-dark-500, .3);
+        // @include media-breakpoint-down(sm){padding: 2.5rem 0;}
+
     }
 
+    &__info{
+        @include media-breakpoint-down(sm){flex-direction: column; align-items: center;}
+    }
     &__num{
         font-family: 'cinzel', serif;
         font-weight: 500;
         font-size: 1.65rem;
+        flex: none;
+        @include media-breakpoint-down(sm){font-size: 2rem;}
+
     }
 
     &__date{
         font-family: 'cinzel', serif;
+        flex: none;
+        @include media-breakpoint-down(sm){font-size: 1.7rem;}
+
     }
 
     &__product{
-        
+        @include media-breakpoint-down(sm){margin: 2rem 0;}
+
+        ul{
+            flex-wrap: wrap;
+            gap: .75rem;
+            @include media-breakpoint-down(sm){justify-content: center;}
+
+        }
+
         &-img{
             width: 8.5rem;
             height: 8.5rem;
+            @include media-breakpoint-only(md){width: 7.5rem; height: 7.5rem;}
+            @include media-breakpoint-down(sm){width: 9rem; height: 11rem;}
 
             img{
                 width: 100%;

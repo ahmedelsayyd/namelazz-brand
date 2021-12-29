@@ -1,6 +1,7 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { Cart } from 'src/app/shared/models/cart.model';
@@ -32,7 +33,7 @@ export class ShippingComponent implements OnInit, OnDestroy{
       private fb:FormBuilder,
       private cartService:ShoppingCartService,
       private orderService:OrderService,
-      private authService:AuthService) { }
+      private router: Router) { }
 
   async ngOnInit() {
     
@@ -81,6 +82,7 @@ export class ShippingComponent implements OnInit, OnDestroy{
       this.orderService.updateNumOfOrders(this.orderNumber)
       this.shippingForm.reset()
       this.submitted= false
+      this.router.navigate(['thanks'])
     })
 
   }

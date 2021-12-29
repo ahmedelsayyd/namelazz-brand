@@ -1,1 +1,70 @@
-<p>thanks works!</p>
+<div class="thanks">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="sub-heading sub-heading--md mb-4">thank you for <br> your order</h2>
+                <p class="paragraph paragraph--long mb-4 w-70">your order has been processed and handed over the carrier for delivery. it is will be delivered in 5-6 dayes</p>
+                
+                <p class="paragraph paragraph--long mb-6 w-70">thank you for shopping with us. brows through our wide collection and continue shopping</p>
+
+                <button class="button button--md" routerLink="/catalog">shop now</button>
+            </div>
+
+            <div class="col-md-6">
+                <div class="gallery">
+                    <div class="img-wrap">
+                        <img class="img img--main" src="../../../assets/img/thanks/main.jpg" alt="">
+                        <img class="img img--sub" src="../../../assets/img/thanks/sub.jpg" alt="">
+                    </div>
+                    <div class="gallery__link">
+                        <a routerLink="/new">
+                          <!-- rounded text  -->
+                          <div id="warped">
+                            <span class="w0" i18n>n</span><span class="w1" i18n>e</span
+                            ><span class="w2" i18n>w</span><span class="w3"> </span
+                            ><span class="w4" i18n>c</span><span class="w5" i18n>o</span
+                            ><span class="w6" i18n>l</span><span class="w7" i18n>l</span
+                            ><span class="w8" i18n>e</span><span class="w9" i18n>c</span
+                            ><span class="w10" i18n>t</span><span class="w11" i18n>i</span
+                            ><span class="w12" i18n>o</span><span class="w13" i18n>n</span
+                            ><span class="w14" i18n>n</span><span class="w15">e</span
+                            ><span class="w16" i18n>w</span><span class="w17"> </span
+                            ><span class="w18" i18n>c</span><span class="w19" i18n>o</span
+                            ><span class="w20" i18n>l</span><span class="w21" i18n>l</span
+                            ><span class="w22" i18n>e</span><span class="w23" i18n>c</span
+                            ><span class="w24" i18n>t</span><span class="w25" i18n>i</span
+                            ><span class="w26" i18n>o</span><span class="w27" i18n>n</span>
+                            <!--  icon -->
+                            <svg class="gallery__link__icon">
+                              <use [attr.xlink:href]="'../../../assets/img/sprite.svg#icon-right-arrow'"></use>
+                            </svg>
+                          </div>
+                            
+                        </a>  
+                      </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        
+    </div>
+
+
+    
+</div>
+
+<div class="related-products">
+    <div class="container">
+
+        <div class="row">
+            <h2 class="related-products__heading sub-heading">you may also like this items</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3" *ngFor="let product of relatedProducts">
+                <product-card [loadedComponent]="'details'" [product]="product"></product-card>
+            </div>
+        </div>
+    </div>
+</div>

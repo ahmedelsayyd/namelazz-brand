@@ -30,16 +30,23 @@
         margin-top: 2rem;
         height: 3.2rem;
         cursor: pointer;
+        // @include media-breakpoint-down(sm) {margin-top: 1rem;}
+        // @include media-breakpoint-down(xs) {margin-top: .75rem;}
+
     }
 
     &__name{
-
+        text-align: start;
+        word-break: break-all;
     }
 
     &__price{
         font-size: 2rem;
         font-weight: 500;
         font-family: "Cinzel", serif;
+        @include media-breakpoint-down(sm){font-size: 1.8rem;}
+        @include media-breakpoint-down(sm){font-size: 1.7rem;}
+        @include media-breakpoint-down(xs){font-size: 1.5rem;}
     }
 
     &__button{

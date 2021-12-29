@@ -1,9 +1,10 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { Subscription } from 'rxjs';
-import { switchMap, take } from 'rxjs/operators';
+import { combineLatest, Subject, Subscription } from 'rxjs';
+import { map, switchMap, take, takeUntil } from 'rxjs/operators';
 import { Product } from 'src/app/shared/models/product.model';
+import { MediaService } from 'src/app/shared/services/media.service';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 
@@ -14,7 +15,7 @@ import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.servi
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit, AfterViewInit , OnDestroy{
-
+  destroy$ = new Subject()
   @ViewChild('thumbImageContainer') thumbImageContainer: ElementRef
   @ViewChild('mainImage') mainImage: ElementRef
 
@@ -44,23 +45,40 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit , OnDestro
       private productService: ProductService,
       private route: ActivatedRoute,
       private cartService:ShoppingCartService,
+      private mediaService: MediaService,
       private msg: NzMessageService) { }
 
   ngOnInit(): void {
 
-    let productId = this.route.snapshot.queryParamMap.get('id');
-  
-    this.productSubscription = this.productService.getProduct(productId)
-    .pipe(switchMap(p =>{
-        this.product = p;
-   
 
-    return this.productService.getAllProducts()
-      
-    }))
-    .subscribe((products: Product[])=> {
-      this.similarProducts = products.filter(p=> p.category === this.product.category).slice(0, 4)
-      
+    this.route.queryParams
+    .pipe(
+      switchMap(params =>{
+
+        const query = ['(max-width: 575.98px)', 'xs','(min-width: 768px) and (max-width: 991.98px)','(min-width: 576px) and (max-width: 768px)']
+        return combineLatest([this.productService.getProduct(params.id),this.productService.getAllProducts(), this.mediaService.layOutChangesListner(query)])
+
+    }), takeUntil(this.destroy$))
+    .subscribe(([selectedProduct ,products, screenSize]:[Product, Product[], string]) =>{
+      this.product = selectedProduct;
+      this.selectedColor = selectedProduct.colors[0]
+
+
+      switch (screenSize) {
+        case 'md':
+        case 'sm':
+        case '':
+          this.similarProducts = products.filter(p=> p.category === this.product.category).slice(0, 3)
+          break;
+
+        case 'xs':
+          this.similarProducts = products.filter(p=> p.category === this.product.category).slice(0, 2)
+          break;
+
+        default:
+          this.similarProducts = products.filter(p=> p.category === this.product.category).slice(0, 4)
+          break;
+      }
     })
 
 
@@ -112,7 +130,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit , OnDestro
 
 
   selectColor(color) {
-    this.selectedColor = color;
+    this.selectedColor = color;    
     let colorsListElms = this.colorsList.nativeElement.childNodes;
 
     colorsListElms[0].classList.add('active');
@@ -133,6 +151,8 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit , OnDestro
   selectSize(size) {
 
     this.selectedSize = size;
+    console.log(this.selectedSize);
+    
     let sizesListElms = this.sizesList.nativeElement.childNodes;
 
     // this.renderer.addClass(sizesListElms[0], 'active')
@@ -181,7 +201,9 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit , OnDestro
   }
 
   ngOnDestroy(){
-    if(this.productSubscription) this.productSubscription.unsubscribe()
+    // if(this.productSubscription) this.productSubscription.unsubscribe()
+    this.destroy$.next(true)
+    this.destroy$.unsubscribe()
   }
   
 }

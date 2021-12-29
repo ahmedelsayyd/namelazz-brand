@@ -13,6 +13,15 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ar": "src/locale/messages.ar.xlf",
+          "en": "src/locale/messages.en.xlf"
+        }
+      },
+
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -75,6 +84,46 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+
+            "en": {
+              "localize": ["en"],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputPath": "dist/namelazz-brand",
+              "i18nMissingTranslation": "error",
+              "baseHref": "/en/"
+            },
+            "ar": {
+              "localize": ["ar"],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputPath": "dist/namelazz-brand",
+              "i18nMissingTranslation": "error"
             }
           },
           "defaultConfiguration": ""
@@ -87,6 +136,12 @@
           "configurations": {
             "production": {
               "browserTarget": "namelazz-brand:build:production"
+            },
+            "en": {
+              "browserTarget": "namelazz-brand:build:en"
+            },
+            "ar": {
+              "browserTarget": "namelazz-brand:build:ar"
             }
           }
         },

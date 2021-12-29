@@ -1,5 +1,5 @@
 <div class="fav">
-    <div class="container">
+    <div class="container-lg">
         <div class="row">
             <div class="fav__heading">
                 <h3 class="fav__heading--main sub-heading"> Favorite</h3>
@@ -9,7 +9,7 @@
         
         <div class="fav__products" >
             <div class="row">
-                <div class="col-md-3" *ngFor="let product of (favProducts | async)">
+                <div class="col-6 col-sm-4 col-md-3" *ngFor="let product of (favProducts | async)">
                     <product-card [product]= "product" [loadedComponent]="'fav'"></product-card>
                 </div>
             </div>

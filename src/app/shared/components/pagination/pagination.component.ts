@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subscription } from 'rxjs';
+import { LocaleService } from '../../services/locale.service';
 import { PaginationData, PaginationService } from './pagination.service';
 
 @Component({
@@ -10,23 +11,22 @@ import { PaginationData, PaginationService } from './pagination.service';
 export class PaginationComponent implements OnInit, OnDestroy {
  
 totalItems$= new BehaviorSubject<number>(0)
+pageSize$= new BehaviorSubject<number>(0)
+
 
  @Input() loadedComponent: string
- @Input() pageSize: number
- @Input() set totalItems(value: number) { 
-            this.totalItems$.next(value); 
-          }
+ @Input() set pageSize(value:number){ this.pageSize$.next(value) }
+ @Input() set totalItems(value: number) { this.totalItems$.next(value); }
 
- get totalItems(){
-   return this.totalItems$.getValue()
- }
+ get totalItems() {return this.totalItems$.getValue()}
+ get pageSize() {return this.pageSize$.getValue()}
 
   pagData: PaginationData  
 
   pagSub:Subscription
   totalItemsSub:Subscription
 
-  constructor(private PaginationService: PaginationService) {
+  constructor(private PaginationService: PaginationService, public localService: LocaleService) {
 
    }
 
@@ -34,7 +34,7 @@ totalItems$= new BehaviorSubject<number>(0)
 
     setTimeout(()=>{
 
-      this.totalItemsSub = this.totalItems$.subscribe(x=>{
+      this.totalItemsSub = combineLatest([this.totalItems$, this.pageSize$]).subscribe(x=>{
         
         this.setPaginate(1)
       })
@@ -48,6 +48,7 @@ totalItems$= new BehaviorSubject<number>(0)
   }
 
   setPaginate(currPage) {    
+    
     this.PaginationService.paginate(this.totalItems, currPage, this.pageSize)
  
   }

@@ -8,7 +8,7 @@
         
         <div class="sideNav__lang" (click)="slideDown = !slideDown">
             <i nz-icon nzType="global" nzTheme="outline"></i>
-            <span>EN, USD</span>
+            <span i18n>EN, USD</span>
         </div>
     </div>
 
@@ -17,19 +17,19 @@
         <div class="sideNav__lang-dropdown">
             <div class="dropdown" [@toggoleDropdown]=" slideDown ? 'show' : 'hide' " >
                 <div class="dropdown__group">
-                    <span class="dropdown__title">choose language</span>
+                    <span class="dropdown__title" i18n>choose language</span>
                     <div class="dropdown__choices-wrap">
-                        <a class="dropdown__choices active">Русский (RU)</a>
-                        <a class="dropdown__choices">English (EN)</a>
+                        <a class="dropdown__choices active" i18n>Arabic (AR)</a>
+                        <a class="dropdown__choices" i18n>English (EN)</a>
                     </div>
                 </div>
     
                 <div class="dropdown__group">
-                    <span class="dropdown__title">choose currency</span>
+                    <span class="dropdown__title" i18n>choose currency</span>
                     <div class="dropdown__choices-wrap">
-                        <button class="dropdown__choices">RUB (₽)</button>
-                        <button class="dropdown__choices active">USD ($)</button>
-                        <button class="dropdown__choices">EUR (€)</button>
+                        <button class="dropdown__choices" i18n>RUB (₽)</button>
+                        <button class="dropdown__choices active" i18n>USD ($)</button>
+                        <button class="dropdown__choices" i18n>EGP (ج.م)</button>
                     </div>
                 </div>
             </div>
@@ -38,42 +38,42 @@
 
         <div class="sideNav__menue-wrap">
             <ul class="sideNav__menue">
-                <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/new')">New</a></li>
+                <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/new')" i18n>New</a></li>
                 <li class="sideNav__menue-item">
                     <button class="sideNav__menue__link"
                     (click)="toggoleSubMenu('catalog', $event)"
                     [ngClass]="{'active' : subMenue.catalog}">
-                        <p>Catalog</p>
+                        <p i18n>Catalog</p>
                         <i *ngIf=" !subMenue.catalog.isOpened" nz-icon nzType="plus" nzTheme="outline"></i>
                         <i  *ngIf=" subMenue.catalog.isOpened" nz-icon nzType="minus" nzTheme="outline"></i>
                     </button>
                     <ul class="sideNav__subMenue" [@toggoleDropdown]="(subMenue.catalog && activeSubMenue == 'catalog')  ? 'show' : 'hide' ">
-                        <li><a (click)="navigateTo('/catalog/all')" class="sideNav__menue__link">All</a></li>
-                        <li><a (click)="navigateTo('/catalog/dresses')" class="sideNav__menue__link">dresses</a></li>
-                        <li><a (click)="navigateTo('/catalog/jackt&sleeveless')" class="sideNav__menue__link">jacket & sleeveless</a></li>
-                        <li><a (click)="navigateTo('/catalog/tops&bodysuits')" class="sideNav__menue__link">tops & bodysuits</a></li>
-                        <li><a (click)="navigateTo('/catalog/trousers&shorts')" class="sideNav__menue__link">Trousers & Shorts</a></li>
-                        <li><a (click)="navigateTo('/catalog/shirts&blows')" class="sideNav__menue__link">shirts & blouses</a></li>
-                        <li><a (click)="navigateTo('/catalog/t-shirt&tops')" class="sideNav__menue__link">t-shirt&tops</a></li>
-                        <li><a (click)="navigateTo('/catalog/outer-Wear')" class="sideNav__menue__link">outer clothing</a></li>
-                        <li><a (click)="navigateTo('/catalog/suits')" class="sideNav__menue__link">suits</a></li>
-                        <li><a (click)="navigateTo('/catalog/skirts')" class="sideNav__menue__link">skirts</a></li>
+                        <li><a (click)="navigateTo('/catalog/all')" class="sideNav__menue__link" i18n>All</a></li>
+                        <li><a (click)="navigateTo('/catalog/dresses')" class="sideNav__menue__link" i18n>dresses</a></li>
+                        <li><a (click)="navigateTo('/catalog/jackt&sleeveless')" class="sideNav__menue__link" i18n>jacket & sleeveless</a></li>
+                        <li><a (click)="navigateTo('/catalog/tops&bodysuits')" class="sideNav__menue__link" i18n>tops & bodysuits</a></li>
+                        <li><a (click)="navigateTo('/catalog/trousers&shorts')" class="sideNav__menue__link" i18n>Trousers & Shorts</a></li>
+                        <li><a (click)="navigateTo('/catalog/shirts&blows')" class="sideNav__menue__link" i18n>shirts & blouses</a></li>
+                        <li><a (click)="navigateTo('/catalog/t-shirt&tops')" class="sideNav__menue__link" i18n>t-shirt&tops</a></li>
+                        <li><a (click)="navigateTo('/catalog/outer-Wear')" class="sideNav__menue__link" i18n>outer clothing</a></li>
+                        <li><a (click)="navigateTo('/catalog/suits')" class="sideNav__menue__link" i18n>suits</a></li>
+                        <li><a (click)="navigateTo('/catalog/skirts')" class="sideNav__menue__link" i18n>skirts</a></li>
                     </ul>
                 </li>
-                <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/soon')">Soon</a></li>
-                <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/Sale')">Sale</a></li>
-                <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/favorites')">Favorite</a></li>
+                <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/soon')" i18n>Soon</a></li>
+                <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/Sale')" i18n>Sale</a></li>
+                <li class="sideNav__menue-item"><a class="sideNav__menue__link" (click)="navigateTo('/favorites')" i18n>Favorite</a></li>
                 <li class="sideNav__menue-item">
                     <button class="sideNav__menue__link"
                     (click)="toggoleSubMenu('projects', $event)"
                     [ngClass]="{'active' : subMenue.projects}">
-                        <p>Projects</p>
+                        <p i18n>Projects</p>
                         <i *ngIf="!subMenue.projects.isOpened" nz-icon nzType="plus" nzTheme="outline"></i>
                         <i  *ngIf="subMenue.projects.isOpened" nz-icon nzType="minus" nzTheme="outline"></i>
                     </button>
                     <ul class="sideNav__subMenue" [@toggoleDropdown]="(subMenue.projects && activeSubMenue == 'projects') ? 'show' : 'hide' ">
-                        <li><a (click)="navigateTo('artbook')" class="sideNav__menue__link">ArtBook</a></li>
-                        <li><a (click)="navigateTo('')"  class="sideNav__menue__link">collection</a></li>
+                        <li><a (click)="navigateTo('pages/artbook')" class="sideNav__menue__link" i18n>ArtBook</a></li>
+                        <li><a (click)="navigateTo('catalog')"  class="sideNav__menue__link" i18n>collection</a></li>
                     </ul>
                 </li>
                 <li class="sideNav__menue-item">
@@ -81,19 +81,19 @@
                     class="sideNav__menue__link" 
                     (click)="toggoleSubMenu('buyers', $event)"
                     [ngClass]="{'active' : subMenue.buyers}">
-                        <p>For Buyers</p>
+                        <p i18n>For Buyers</p>
                         <i *ngIf="!subMenue.buyers.isOpened" nz-icon nzType="plus" nzTheme="outline"></i>
                         <i  *ngIf="subMenue.buyers.isOpened" nz-icon nzType="minus" nzTheme="outline"></i>
                     </button>
                     <ul class="sideNav__subMenue" [@toggoleDropdown]="(subMenue.buyers && activeSubMenue == 'buyers') ? 'show' : 'hide' ">
-                        <li><a (click)="navigateTo('/pages/delivery')" class="sideNav__menue__link">Payment & Shipping</a></li>
-                        <li><a (click)="navigateTo('/pages/return')" class="sideNav__menue__link">Returns</a></li>
-                        <li><a (click)="navigateTo('/pages/clothing-care')" class="sideNav__menue__link">composition & Care</a></li>
-                        <li><a (click)="navigateTo('/pages/policy')" class="sideNav__menue__link">The Privacy Policy</a></li>
-                        <li><a (click)="navigateTo('/pages/privacy')" class="sideNav__menue__link">User Agreement</a></li>
+                        <li><a (click)="navigateTo('/pages/delivery')" class="sideNav__menue__link" i18n>Payment & Shipping</a></li>
+                        <li><a (click)="navigateTo('/pages/return')" class="sideNav__menue__link" i18n>Returns</a></li>
+                        <li><a (click)="navigateTo('/pages/clothing-care')" class="sideNav__menue__link" i18n>composition & Care</a></li>
+                        <li><a (click)="navigateTo('/pages/policy')" class="sideNav__menue__link" i18n>The Privacy Policy</a></li>
+                        <li><a (click)="navigateTo('/pages/privacy')" class="sideNav__menue__link" i18n>User Agreement</a></li>
                     </ul>
                 </li>
-                <li class="sideNav__menue-item"><a (click)="navigateTo('/contacts')" class="sideNav__menue__link">cotacts</a></li>
+                <li class="sideNav__menue-item"><a (click)="navigateTo('pages/contacts')" class="sideNav__menue__link" i18n>contacts</a></li>
             </ul>
         </div>
 
@@ -101,8 +101,8 @@
             <svg class="sideNav__icon sideNav__icon--user">
                 <use xlink:href="../../../assets/img/sprite.svg#icon-user"></use>
             </svg>
-            <span *ngIf="this.authService.isLoggedIn">Profile</span>
-            <span *ngIf="!this.authService.isLoggedIn">Login</span>
+            <span *ngIf="this.authService.isLoggedIn" i18n>Profile</span>
+            <span *ngIf="!this.authService.isLoggedIn" i18n>Login</span>
         </div>
 
     </div>

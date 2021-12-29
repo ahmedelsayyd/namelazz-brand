@@ -1,0 +1,53 @@
+<div class="catalog">
+    <div class="container">
+        <div class="row">
+            <div class="catalog__header">
+                <div class="catalog__heading">
+                    <span class="paragraph paragraph--short mb-0" i18n i18n>explore our love</span>
+                    <h2 class="sub-heading" i18n i18n>Catalog</h2>
+                </div>
+                <a class="link link--bold"> 
+                    <span class="link__name" routerLink="/catalog" i18n i18n>Go To Catalog</span>
+                    <svg class="link__arrow">
+                        <use [attr.xlink:href]="'../../../assets/img/sprite.svg#icon-'+ siteDirections.endDirection + '-arrow'"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="catalog__products">
+            <div class="row justify-content-between">
+                <div class="product--1">
+
+                    <product-card [loadedComponent]="'catalog'" [catalogProduct]= "catalogProduct[0]"></product-card>
+
+                </div>
+
+                <!--  -->
+                <div class="product--2">
+
+                    <product-card [loadedComponent]="'catalog'" [catalogProduct]= "catalogProduct[1]"></product-card>
+
+                </div>
+                <!--  -->
+
+                <div class="product--3">
+
+                    <product-card [loadedComponent]="'catalog'" [catalogProduct]= "catalogProduct[2]"></product-card>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-end">
+            <div class="catalog__categories">
+                <ul class="catalog__categories-list list-unstyled">
+                    <a routerLink="/catalog/trousers&shorts"><li class="catalog__categories-list-item" i18n>trousers</li> </a>
+                    <a routerLink="/catalog/tops&bodysuits"><li class="catalog__categories-list-item" i18n>corsets & tops</li></a>
+                    <a routerLink="/catalog/suits"><li class="catalog__categories-list-item" i18n>suits</li></a>
+                    <a routerLink="/catalog/shirts&blows"><li class="catalog__categories-list-item" i18n>shirts & blouses</li></a> 
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

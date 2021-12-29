@@ -28,9 +28,15 @@
 
                 <div class="col-md-6">
                     <div class="product__info">
-                        <div class="product__sub-name paragraph paragraph--short">{{ productNameSplit(product?.name, " ", 5, "sub") }}</div>
-                        <h2 class="product__name sub-heading">{{ productNameSplit(product?.name, " ", 2, "main") }}</h2>
-                        <div class="product__price">{{product?.price | currency : 'RUB': 'symbol-narrow':'3.0' : 'ru'}}</div>
+
+                        <div class="wraper-for-media">
+                            <div>
+                                <div class="product__sub-name paragraph paragraph--short">{{ productNameSplit(product?.name, " ", 5, "sub") }}</div>
+                                <h2 class="product__name sub-heading">{{ productNameSplit(product?.name, " ", 2, "main") }}</h2>
+                            </div>
+                            <div class="product__price">{{product?.price | myCurrency}}</div>
+                        </div>
+
                         <div class="product__colors">
                             <div class="text">Colors</div>
                             <ul #colorsList class="colors-list">
@@ -122,8 +128,8 @@
                 <h2 class="related-products__heading sub-heading">you may also like this items</h2>
             </div>
             <div class="row">
-                <div class="col-md-3" *ngFor="let product of similarProducts">
-                    <product-card [loadedComponent]="'details'" [product]="product"></product-card>
+                <div class="col col-lg-3" *ngFor="let p of similarProducts">
+                    <product-card [loadedComponent]="'details'" [product]="p"></product-card>
                 </div>
             </div>
         </div>
@@ -143,10 +149,10 @@
 
     <div class="gallary">
         <div class="row no-gutters">
-            <div class="col-md-3"><img src="../../../../assets/img/home/gallery-1.jpg" alt=""></div>
-            <div class="col-md-3"><img src="../../../../assets/img/home/gallery-2.jpg" alt=""></div>
-            <div class="col-md-3"><img src="../../../../assets/img/home/gallery-3.jpg" alt=""></div>
-            <div class="col-md-3"><img src="../../../../assets/img/home/gallery-4.jpg" alt=""></div>
+            <div class="col-4 col-sm-3 d-none d-sm-block"><img src="../../../../assets/img/home/gallery-1.jpg" alt=""></div>
+            <div class="col-4 col-sm-3"><img src="../../../../assets/img/home/gallery-2.jpg" alt=""></div>
+            <div class="col-4 col-sm-3"><img src="../../../../assets/img/home/gallery-3.jpg" alt=""></div>
+            <div class="col-4 col-sm-3"><img src="../../../../assets/img/home/gallery-4.jpg" alt=""></div>
         </div>
     </div>
 </div>

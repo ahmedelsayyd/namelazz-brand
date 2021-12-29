@@ -1,15 +1,15 @@
 <div class="order">
-    <div class="container">
+    <div class="container-lg">
 
         <ul class="order__list d-flex flex-column" >
-            <li class="order__item py-4" *ngFor="let order of orders">
+            <li class="order__item py-4 py-sm-5" *ngFor="let order of orders">
     
                 <div class="order__info d-flex align-items-center">
                     <div class="order__num mr-4"> ORDER {{order.orderNumber}}</div>
                     <p class="order__date paragraph paragraph--short mb-0 mr-5">{{formatDate(order.datePlaced)}}</p>
-                    <div class="order__product mr-auto">
+                    <div class="order__product mr-md-auto">
                         <ul class="d-flex" >
-                            <li class="order__product-img mr-2" *ngFor="let item of order.items">
+                            <li class="order__product-img " *ngFor="let item of order.items">
                                 <img [src]="item.product.imageUrl" alt="">
                             </li>
                             <!-- <li class="order__product-img mr-2">

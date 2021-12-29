@@ -16,7 +16,7 @@
 
     &__group{
         align-items: center;
-        padding-left: 0;
+        padding-inline-start: 0;
         display: flex;
 
         & > div{
@@ -28,11 +28,11 @@
     &__menu{
         display: flex;
         align-items: center;
-        border-right: 1px solid $nav-color;
+        border-inline-end: 1px solid $nav-color;
         height: 100%;
         padding: 0 2rem;
         cursor: pointer;
-
+        @include media-breakpoint-down(xs){padding:  0 1.3rem;}
         &__icon{
             fill: $nav-color;
         }
@@ -46,9 +46,16 @@
             fill: $nav-color;
             stroke: $nav-color;
             stroke-width: .4px;
-            margin-left: 3.4rem;
+            margin-inline-start: 3.4rem;
             height: 100%;
             width: 18rem;
+            @include media-breakpoint-down(lg){ width: 16.5rem; margin-inline-start: 3rem;}
+            @include media-breakpoint-down(md){ width: 16rem;}
+            @media (min-width: 768px) and (max-width: 860px){ margin-inline-start: 2rem; }
+            @include media-breakpoint-down(sm){ width: 18rem; margin-inline-start: 1.75rem;}
+            @include media-breakpoint-down(xs){width: 13rem; }
+
+
             &:focus{
                 outline: none;
             }
@@ -64,14 +71,22 @@
         align-items: center;
         font-size: 1.6rem;
         height: 100%;   
+        @media (max-width: 850px){ justify-content: end; }
+
     }
 
     &__link{
         text-decoration: none;
         color: $nav-color;
         cursor: pointer;
+
         &:not(:last-of-type){
-            margin-right: 4.3rem;
+
+            margin-inline-end: 4.3rem;
+            @include media-breakpoint-down(lg){margin-inline-end: 3.3rem;}
+            @include media-breakpoint-down(md){margin-inline-end: 2.8rem;}
+            @media (max-width: 860px){ margin-inline-end: 2.5rem; }
+            
         }
     }
 
@@ -84,7 +99,9 @@
         align-items: center;
         font-size: 1.6rem;
         height: 100%;  
-
+        @media (max-width: 850px){ justify-content: end; }
+        @include media-breakpoint-down(sm){margin-inline-end: 2rem;}
+        @include media-breakpoint-down(xs){margin-inline-end: 0rem;}
         
         .star{
             stroke: $nav-color
@@ -96,7 +113,11 @@
         text-decoration: none;
         
         &:not(:last-of-type){
-            margin-right: 2.1rem;
+            margin-inline-end: 2.1rem;
+            @media only screen and (min-width: 768px) and (max-width: 860px){ margin-inline-end: 1.6rem; }
+            @include media-breakpoint-down(xs){margin-inline-end: 1.5rem;}
+
+
         }
     }
 
@@ -109,13 +130,13 @@
 
     nz-badge{
         top: -1rem ;
-        right: -1.2rem;
+        inset-inline-end: -1.2rem;
 
     }
 
     nz-badge.dot{
         top: 0.2rem;
-        right: 0.2rem;
+        inset-inline-end: 0.2rem;
     }
 }
 

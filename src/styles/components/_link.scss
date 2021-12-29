@@ -26,12 +26,14 @@
   
     &__name{
         color: $color-dark-500;
-        margin-right: .6rem;
+        margin-inline-end: .6rem;
         font-size: 1.4rem;
         letter-spacing: 1px;
         text-transform: uppercase;
         line-height: 1.2;
         transition: all .2s;
+        @include media-breakpoint-down(sm){ font-size: 1.25rem;}
+        @include media-breakpoint-down(xs){letter-spacing: 0; text-align: end;}
 
         &--sm{
           font-size: 1.3rem;

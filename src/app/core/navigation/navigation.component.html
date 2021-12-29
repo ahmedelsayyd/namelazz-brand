@@ -1,6 +1,6 @@
 <nav class="navigation" [@navBarAnimation]="(loadedComponent| async) =='home'? '' : 'animate' ">
     <div class="row h-100 m-0">
-        <div class="col-md-3 h-100 navigation__group">
+        <div class=" col-6 col-md-3 h-100 navigation__group">
             <div class="navigation__menu" (click)="openSideNav($event)">
                 <svg class="navigation__menu__icon" width="35" height="13" viewBox="0 0 35 13" xmlns="http://www.w3.org/2000/svg">
                     <rect x="3" y="1" width="33" height="1"></rect>
@@ -16,21 +16,21 @@
         </div>
     
         <!-- navigation tabs -->
-        <div class="col-md-6 h-100">
+        <div class="d-none d-md-block col-md-6  h-100">
             <ul class="navigation__tabs">
-                <a class="navigation__link" routerLink="/new"><li>new</li></a>
-                <a class="navigation__link" routerLink="/catalog"><li>catalog</li></a>
-                <a class="navigation__link" routerLink="/soon"><li>soon</li></a>
-                <a class="navigation__link" routerLink="/sale"><li>sale</li></a>
-                <a class="navigation__link" routerLink="/artbook"><li>ArtBook</li></a>
+                <a class="navigation__link" routerLink="/new"><li i18n>new</li></a>
+                <a class="navigation__link" routerLink="/catalog"><li i18n>catalog</li></a>
+                <a class="navigation__link" routerLink="/soon"><li i18n>soon</li></a>
+                <a class="navigation__link" routerLink="/sale"><li i18n>sale</li></a>
+                <a class="navigation__link" routerLink="/artbook"><li i18n>ArtBook</li></a>
             </ul>  
         </div> 
 
         <!--  navigation icons -->
 
-        <div class="col-md-3 h-100">
+        <div class="col-6 col-md-3 h-100">
             <ul class="navigation__user">
-                <a class="navigation__user__actions"><li>
+                <a class="navigation__user__actions d-none d-sm-block"><li>
                     <svg class="navigation__icon">
                         <use xlink:href="../../../assets/img/sprite.svg#icon-paperplane"></use>
                     </svg>
@@ -103,11 +103,11 @@
                 <use xlink:href="../../../assets/img/sprite.svg#icon-user"></use>
             </svg>
        
-            <span class="login__title ">Authorization</span>
+            <span class="login__title " i18n>Authorization</span>
 
             <form class="login__form" (onSubmit)="login(loginForm, $event)" #loginForm="ngForm">
                 <div class="form__group">
-                    <label class="form__lable" for="email">Email</label>
+                    <label class="form__lable" for="email" i18n>Email</label>
                     <input class="form__input" 
                     [ngClass]="(loginForm.submitted && !email.touched) ? 'notValid': ''"
                     type="email" name="email" 
@@ -119,12 +119,12 @@
                     
                     <span class="input-requirments input-requirments--error " 
                         *ngIf="(email.value?.length < 1) &&
-                        ((email.errors?.required && email.touched) || (loginForm.submitted && !email.touched) || emailInputfilled)">&#9679; This field is required
+                        ((email.errors?.required && email.touched) || (loginForm.submitted && !email.touched) || emailInputfilled)" i18n>&#9679; This field is required
                     </span>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__lable" for="password">Password</label>
+                    <label class="form__lable" for="password" i18n>Password</label>
                     <input class="form__input" 
                     [ngClass]="(loginForm.submitted && !password.touched) ? 'notValid': ''"
                     type="password" 
@@ -136,7 +136,7 @@
                     placeholder="Enter your password">
                     
                     <span class="input-requirments input-requirments--error"
-                        *ngIf="(password.value?.length < 1) && loginForm.submitted && !password.touched">&#9679; This field is requierd
+                        *ngIf="(password.value?.length < 1) && loginForm.submitted && !password.touched" i18n>&#9679; This field is requierd
                     </span>   
                 </div>
 
@@ -144,20 +144,21 @@
                     <button type="submit" 
                     class="form__submit__button"
                     (click)="login(loginForm, $event)"
+                    i18n
                     >Login</button>
 
-                    <a class="form__forget__password" (click)="forgetPassword(email.value, $event)">Forget Password.?</a>
+                    <a class="form__forget__password" (click)="forgetPassword(email.value, $event)" i18n>Forget Password.?</a>
                 </div>
             </form>
 
             <div class="login__register">
-                <span class="login__sub__title">You Dont Have An Account</span>
-                <a class="login__register__button" routerLink="/signup" stopPropagation (click)="this.uiService.ToggoleLoginCard.next(false)">creat an account</a>
+                <span class="login__sub__title" i18n>You Dont Have An Account</span>
+                <a class="login__register__button" routerLink="/signup" stopPropagation (click)="this.uiService.ToggoleLoginCard.next(false)" i18n>creat an account</a>
             </div>
 
 
             <div class="login__with__social">
-                <span class="login__sub__title">Authorization Through Social Network</span>
+                <span class="login__sub__title" i18n>Authorization Through Social Network</span>
                 <ul class="social__logos">
                     <li>
                         <a>

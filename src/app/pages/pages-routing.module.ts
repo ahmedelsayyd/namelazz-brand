@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { LookbookComponent } from "../core/home/lookbook/lookbook.component";
+import { LookbookComponent } from "../home/lookbook/lookbook.component";
 import { ClothingCareComponent } from "./clothing-care/clothing-care.component";
 import { ContactsComponent } from "./contacts/contacts.component";
 import { OrderTrackingComponent } from "./order-tracking/order-tracking.component";
@@ -15,7 +15,7 @@ import { WarrantyPeriodComponent } from "./warranty-period/warranty-period.compo
 
 
 const routes:Routes = [
-    {path: 'pages', component: PagesComponent, children: [
+    {path: '', component: PagesComponent, children: [
         {path: 'delivery', component: PaymentAndShippingComponent},
         {path: 'return', component: ReturnComponent},
         {path: 'clothing-care', component: ClothingCareComponent},

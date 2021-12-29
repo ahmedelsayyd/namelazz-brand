@@ -1,44 +1,47 @@
 <div class="footer">
-    <div class="footer__info col-md-6">
-        <div class="footer__info-block">
-            <span class="footer__title footer__title--sm">navigate</span>
-            <ul class="footer__list">
-                <li class="footer__list-item">Shop</li>
-                <li class="footer__list-item">Collection</li>
-                <li class="footer__list-item">About</li>
-                <li class="footer__list-item">Account</li>
-                <li class="footer__list-item">Contacts</li>
-            </ul>
-        </div>
+    <div class="row">
 
-        <div class="footer__info-block">
-            <span class="footer__title footer__title--sm">Assistance</span>
-            <ul class="footer__list">
-                <li class="footer__list-item">Shopping & returns</li>
-                <li class="footer__list-item">Privacy policy</li>
-                <li class="footer__list-item">FAQ</li>
-            </ul>
+        <div class="footer__info col-sm-6 order-2 order-sm-1">
+            <div class="footer__info-block">
+                <span class="footer__title footer__title--sm">navigate</span>
+                <ul class="footer__list">
+                    <li class="footer__list-item" routerLink ="/catalog" i18n>Shop</li>
+                    <li class="footer__list-item" routerLink ="/catalog" i18n>Collection</li>
+                    <li class="footer__list-item" i18n>About</li>
+                    <li class="footer__list-item" routerLink="/user/account" i18n>Account</li>
+                    <li class="footer__list-item" routerLink="pages/contacts" i18n>Contacts</li>
+                </ul>
+            </div>
+    
+            <div class="footer__info-block">
+                <span class="footer__title footer__title--sm" i18n>Assistance</span>
+                <ul class="footer__list">
+                    <li class="footer__list-item" i18n>Shopping & returns</li>
+                    <li class="footer__list-item" i18n>Privacy policy</li>
+                    <li class="footer__list-item" i18n>FAQ</li>
+                </ul>
+            </div>
+    
+            <div class="footer__info-block">
+                <span class="footer__title footer__title--sm" i18n>Follow Us</span>
+                <ul class="footer__list">
+                    <li class="footer__list-item" i18n>Instgram</li>
+                    <li class="footer__list-item" i18n>Pinterest</li>
+                </ul>
+            </div>
         </div>
-
-        <div class="footer__info-block">
-            <span class="footer__title footer__title--sm">Follow Us</span>
-            <ul class="footer__list">
-                <li class="footer__list-item">Instgram</li>
-                <li class="footer__list-item">Pinterest</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer__news col-md-6">
-        <div class="footer__news-content">
-            <span class="footer__title footer__title--lg sub-heading">Keep&nbsp;Up&nbsp;To&nbsp;Date Newsletter</span>
-            <div class="footer__input">
-                <input type="email" name="email" class="input" placeholder="Email">
-                <a class="">
-                    <svg class="footer__input-icon">
-                        <use xlink:href="../../../assets/img/sprite.svg#icon-right-arrow"></use>
-                    </svg>
-                </a>
+    
+        <div class="footer__news col-sm-6 order-1 order-sm-2">
+            <div class="footer__news-content">
+                <span class="footer__title footer__title--lg sub-heading" i18n>Keep&nbsp;Up&nbsp;To&nbsp;Date Newsletter</span>
+                <div class="footer__input">
+                    <input type="email" name="email" class="input" placeholder="Email">
+                    <a class="">
+                        <svg class="footer__input-icon">
+                            <use xlink:href="../../../assets/img/sprite.svg#icon-right-arrow"></use>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

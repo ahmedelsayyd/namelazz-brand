@@ -1,0 +1,143 @@
+@import '../../../styles/variable.scss';
+
+
+.catalog{
+    padding: 9rem 0;
+    background-color: $color-primary;
+    @include media-breakpoint-down(xs){padding: 6.5rem 1.75rem;}
+
+
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 9rem;
+
+        @include media-breakpoint-down(md){margin-bottom: 7.5rem;}
+        @include media-breakpoint-down(sm){margin-bottom: 7rem;}
+        @include media-breakpoint-down(sm){margin-bottom: 6rem;}
+
+    }
+    
+    &__heading{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    &__products{
+        ::ng-deep .product__details{
+            @include media-breakpoint-down(md){margin-top: 1rem; margin-bottom: -.5rem;}
+            @include media-breakpoint-down(sm){margin-top: .6rem; }
+
+        }
+    }
+    
+    .product--1{
+        flex: 0 0 32%;
+        position: relative;
+        z-index: 1;
+        @include media-breakpoint-down(sm){flex: 0 0 33%;}
+        @include media-breakpoint-down(xs){flex: 0 0 45%;}
+
+        
+        img{
+            height: 29rem;
+            object-fit: cover;
+        }
+
+
+
+        &::after{
+            content: "";
+            position: absolute;
+            display: block;
+            width: 105%;
+            height: 105%;
+            border: 1px solid $color-dark-500;
+            border-radius: 50%;
+            top: -19rem;
+            left: 0rem;
+            transform: skewX(calc(-15 * #{$transform-direction} *1deg));
+            z-index: -1;
+
+            @include media-breakpoint-down(md){top: -15rem;}
+            @include media-breakpoint-down(sm){top: -13rem;}
+            @include media-breakpoint-down(xs){top: -10rem; height: 100%;}
+
+
+        }
+
+    }
+
+    .product--2{
+        flex: 0 0 25%;
+        @include media-breakpoint-down(sm){flex: 0 0 26%;}
+        @include media-breakpoint-down(xs){display: none;}
+
+
+        img{
+            height: 38rem;
+            object-fit: cover;
+        }
+
+        // ::ng-deep .product__name{
+        //     flex:  0  0 45%;
+        // }
+    }
+
+    .product--3{
+        flex: 0 0 32%;
+        @include media-breakpoint-down(sm){flex: 0 0 33%;}
+        @include media-breakpoint-down(xs){flex: 0 0 45%;}
+
+        img{
+            height: 44rem;
+            object-fit: cover;
+        }
+
+        // ::ng-deep .product__name{
+        //     flex:  0  0 35%;
+        // }
+    }
+
+
+    &__categories{
+
+        flex: 0 0 16%;
+        margin: 5rem 0 2rem;
+        @include media-breakpoint-down(sm){ flex: 0 0 28%;}
+        @include media-breakpoint-down(xs){ flex: 0 0 40%;margin-top: 4rem;}
+
+
+        &-list{
+            display: flex;
+            flex-direction: column;
+
+            a{
+                cursor: pointer;
+                text-decoration: none;
+                color: $color-dark-500;
+            }
+
+            &-item{
+                border-bottom: 1px solid $color-dark-500;
+                display: flex;
+                justify-content: flex-end;
+                padding: .8rem 0;
+                font-size: 1.4rem;
+                font-weight: 500;
+                transition: all .2s;
+
+                &:hover{
+                    //font-weight: 600;
+                    border-bottom: 1px solid $color-accent-dark;
+                    color: $color-accent-dark;
+                    letter-spacing: .75px;
+
+                }
+            }
+        }
+    }
+}

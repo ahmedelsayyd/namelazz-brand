@@ -12,6 +12,9 @@ import { TrackFocusDirective } from "./directives/track-focus.directive";
 import { NzIconModule } from "ng-zorro-antd/icon";
 import { DraggingDirective } from './directives/dragging.directive';
 import { SortByPipe } from './pipes/sort-by.pipe';
+import { NzMessageService } from "ng-zorro-antd/message";
+import {LayoutModule} from '@angular/cdk/layout';
+
 
 
 
@@ -32,6 +35,7 @@ import { SortByPipe } from './pipes/sort-by.pipe';
         FormsModule, 
          ReactiveFormsModule,
          NzIconModule,
+         LayoutModule
     ],
 
 
@@ -47,9 +51,10 @@ import { SortByPipe } from './pipes/sort-by.pipe';
         FormsModule, 
         ReactiveFormsModule,
         NzIconModule,
-        DraggingDirective
+        DraggingDirective,
+        LayoutModule
 
     ],
-    providers: [PaginationService],
+    providers: [PaginationService, NzMessageService],
 })
 export class SharedModule { }

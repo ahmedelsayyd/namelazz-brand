@@ -14,7 +14,7 @@
 
 
 <div class="cart" *ngIf="cart?.totalItemsCount > 0">
-    <div class="container">
+    <div class="container-lg">
         <div class="row">
             <div class="cart__route paragraph paragraph--short">main page / <strong>shopping cart</strong></div>
         </div>
@@ -28,21 +28,21 @@
                 </div>
             </div>
 
-            <div class="col-md-4 offset-sm-1 pl-0">
-                <h3 class="sub-heading">Total</h3>
+            <div class="col-md-5 col-lg-4 offset-lg-1 pl-0">
+                <h3 class="sub-heading total-txt">Total</h3>
                 <div class="cart__total">
                     <div class="cart__sub-total d-flex justify-content-between">
                         <span>Subtotal</span>
-                        <span class="value">{{cart?.subTotalPrice | currency : 'RUB': 'symbol-narrow':'3.0' : 'ru'}}</span>
+                        <span class="value">{{cart?.subTotalPrice | myCurrency}}</span>
                     </div>
                     <div class="cart__shipping d-flex justify-content-between">
                         <span>Shipping</span>
-                        <span class="value">{{cart?.shipping | currency : 'RUB': 'symbol-narrow':'3.0' : 'ru'}}</span>
+                        <span class="value">{{cart?.shipping | myCurrency}}</span>
                     </div>
 
                     <div class="cart__coupon d-flex justify-content-between" *ngIf="couponApplyed">
                         <span>Coupon</span>
-                        <span class="value">-{{cart?.couponDisc | currency : 'RUB': 'symbol-narrow':'3.0' : 'ru'}}</span>
+                        <span class="value">-{{cart?.couponDisc | myCurrency}}</span>
                     </div>
 
                     <div class="line my-5"></div>
@@ -50,7 +50,7 @@
 
                     <div class="cart__total-price d-flex justify-content-between">
                         <span>Total</span>
-                        <span class="value">{{cart?.totalPrice | currency : 'RUB': 'symbol-narrow':'3.0' : 'ru'}}</span>
+                        <span class="value">{{cart?.totalPrice | myCurrency}}</span>
                     </div>
 
                     <div class="cart__discCode d-flex justify-content-between">

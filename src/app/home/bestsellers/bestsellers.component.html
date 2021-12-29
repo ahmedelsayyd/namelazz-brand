@@ -1,0 +1,50 @@
+<div class="bestseller">
+    <div class="container">
+        <div class="row">
+            <div class="bestseller__header">
+                <div class="bestseller__heading">
+                    <span class="paragraph paragraph--short" i18n>bestseller</span>
+                    <h2 class="sub-heading" i18n>Popular <br class="d-sm-block d-md-none"> Categories</h2>
+                </div>
+                <a class="link link--bold"> 
+                    <span class="link__name" routerLink="/catalog/all" i18n>Shop All</span>
+                    <svg class="link__arrow">
+                        <use [attr.xlink:href]="'../../../assets/img/sprite.svg#icon-'+ siteDirections.endDirection + '-arrow'"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="bestseller__products">
+            <div class="row justify-content-between">
+                <div class="product product--1" [ngClass]="{'sm-active':currentScreenSize=='sm', 'xs-active': currentScreenSize=='xs'}">
+                    <product-card [loadedComponent] ="'bestseller'" [product] ="filteredProducts[startIndex]"></product-card>
+                    <!-- <product-card [loadedComponent] ="'bestseller'" [product]="filteredProducts"></product-card> -->
+
+                </div>
+
+                <!--  -->
+                <div class="product product--2" [ngClass]="{'sm-active':currentScreenSize=='sm', 'xs-active': currentScreenSize=='xs'}" *ngIf="pageSize > 2">
+
+                    <product-card [loadedComponent] ="'bestseller'" [product] ="filteredProducts[(startIndex+1)]"></product-card>
+                    <!-- <product-card [loadedComponent] ="'bestseller'"></product-card> -->
+
+                </div>
+                <!--  -->
+
+                <div class="product product--3" [ngClass]="{'sm-active':currentScreenSize=='sm', 'xs-active': currentScreenSize=='xs'}">
+
+                    <product-card [loadedComponent] ="'bestseller'" [product] ="filteredProducts[endIndex]"></product-card>
+                    <!-- <product-card [loadedComponent] ="'bestseller'"></product-card> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+
+            <div class="bestseller__pagination">
+                <pagination [loadedComponent]="'bestseller'" [totalItems]="items.length - 1" [pageSize]="pageSize"></pagination>
+            </div>
+        </div>
+    </div>
+</div>

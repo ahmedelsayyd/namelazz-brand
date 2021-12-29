@@ -1,0 +1,54 @@
+@import '../../styles/variable.scss';
+
+.more-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50rem;
+    background-image: url("../../assets/img/home/background-lg.jpg");
+    background-size: cover;
+    background-position: center;
+    @include media-breakpoint-down(sm){height: 42rem;}
+    @include media-breakpoint-down(xs){height: 37rem;}
+
+
+    &__heading{
+        color: $color-primary;
+        line-height: 1.25;
+        text-align: center;
+        @include media-breakpoint-down(xs){line-height: 1.2;}
+
+    }
+
+    &__text{
+        margin: 1.75rem 0 8rem;
+        color: rgba($color-primary, .6);
+        font-size: 1.4rem;
+        word-spacing: 3px;
+        @include media-breakpoint-down(sm){margin: 1.75rem 0 6rem;}
+        @include media-breakpoint-down(xs){margin: 1.75rem 0 5rem;}
+
+    }
+
+    .link{
+
+        &__name{
+            color: $color-primary;
+            letter-spacing: 2px;
+        }
+    
+        &__arrow{
+            fill: $color-primary;
+        }
+
+        &:hover &__name{
+            letter-spacing: 2.5px;
+            color: #000;
+        }
+        &:active &__name{
+            letter-spacing: 1.75px;
+        }
+    }
+
+}

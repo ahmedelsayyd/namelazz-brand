@@ -13,7 +13,6 @@ import { SharedModule } from '../shared/shared.module';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { AddAttributeComponent } from './dashboard/add-attribute/add-attribute.component';
@@ -60,6 +59,6 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
     NzRadioModule,
     NzPopconfirmModule
   ],
-  providers: [NzMessageService]
+  providers: []
 })
 export class AdminModule { }

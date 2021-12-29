@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="ar">
+    <body>
+      <trans-unit id="72f34b3ac267bb423e47c3bed43123f99239d1da" datatype="html">
+        <source>Shop</source>
+        <target state="translated"> تسوق الأن</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="40cf215f61708390d3aba0212e49596e0d3d981c" datatype="html">
+        <source>Collection</source>
+        <target state="translated">مجموعه</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="004b222ff9ef9dd4771b777950ca1d0e4cd4348a" datatype="html">
+        <source>About</source>
+        <target state="translated">من نحن</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="29881a45dafbe5aa05cd9d0441a4c0c2fb06df92" datatype="html">
+        <source>Account</source>
+        <target state="translated">الحساب الشخصى</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9b475bb63675494482effde989c7f1f18c232620" datatype="html">
+        <source>Contacts</source>
+        <target state="translated">التواصل</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c838abf7bbfd9ff62044972901543b179342686" datatype="html">
+        <source>Assistance</source>
+        <target state="translated">مساعده</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f3f7bd4c1ea0e7233f43f05711b3f57fe319bb33" datatype="html">
+        <source>Shopping &amp; returns</source>
+        <target state="translated">المشتريات &amp; المرتجعات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d0969b2f97e4de7eec3d16c223b42d9fa4af4c5d" datatype="html">
+        <source>Privacy policy</source>
+        <target state="translated">الخصوصيه</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b6dbf2d92858e82bcf6ae5dbc8dfb4b29d82ad0" datatype="html">
+        <source>FAQ</source>
+        <target state="translated">FAQ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e5550b4db07bf4bed5d32090ab86adf9583cc7c7" datatype="html">
+        <source>Follow Us</source>
+        <target state="translated">تابعنا</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7696e287cc5709b522d0af00f0a9144ae213fbe3" datatype="html">
+        <source>Instgram</source>
+        <target state="translated">انستجرام</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="77ce98fa8988bd33011b2221a28c373dd35a5db1" datatype="html">
+        <source>Pinterest</source>
+        <target state="translated">Pinterest</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="79833afea1d194c1dabb899b49ab219a8515da83" datatype="html">
+        <source>Keep Up To Date Newsletter</source>
+        <target state="translated">متابعه اخر الاخبار</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/footer/footer.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="50b3e721b5c4731ab004595b348ce2a7737e81b3" datatype="html">
+        <source>new</source>
+        <target state="translated">جديد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac31c31792ccaf2b30e6dd63090c1a1775b4aad5" datatype="html">
+        <source>catalog</source>
+        <target state="translated">الفئات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="543d6e7e4247fa71017a4dde3510a3fdf8c8ca62" datatype="html">
+        <source>soon</source>
+        <target state="translated">قريبا</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d5f8c730cb166f8222d4705488fad6918f14c422" datatype="html">
+        <source>sale</source>
+        <target state="translated">تخفيضات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5732bd793a021cc50fb59bba8a3b140b489223b6" datatype="html">
+        <source>ArtBook</source>
+        <target state="translated">المعرض</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a3ab25ce3059edcc5e2492aa915094c5dc296c8e" datatype="html">
+        <source>Authorization</source>
+        <target state="translated">التحقق</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <target state="translated">االايميل</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9ea0812668fb5f7cd0c59967a24d8375d5b39ea3" datatype="html">
+        <source>● This field is required </source>
+        <target state="translated">● هذا الحقل مطلوب</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">122,123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
+        <source>Password</source>
+        <target state="translated">الباسورد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="25c06a2ca98f3bbfbb47ce0dcd233eb1f08c2871" datatype="html">
+        <source>● This field is requierd </source>
+        <target state="translated">● هذا الحقل مطلوب</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">139,140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
+        <source>Login</source>
+        <target state="translated">تسجيل دخول</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b522011d75e47688de9041d020f52dcc977b2597" datatype="html">
+        <source>Forget Password.?</source>
+        <target state="translated">هل نسيت كلمه الباسورد.؟</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="26cb1149839299f68a93a494c3e8a44b2e7855da" datatype="html">
+        <source>You Dont Have An Account</source>
+        <target state="translated">هل لديك حساب شخصى</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c689423b46e4525e8f69b4680f34db9cc8730ec" datatype="html">
+        <source>creat an account</source>
+        <target state="translated">انشاء حساب شخصى</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c5be99f237c2b8e28f66e3db7c19b1340d38d6b2" datatype="html">
+        <source>Authorization Through Social Network</source>
+        <target state="translated">التسجيل من خلال وسائل التواصل الاجتماعى </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/navigation/navigation.component.html</context>
+          <context context-type="linenumber">161</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="06f32bb5f9091eb71059465cff223c74e9737a8d" datatype="html">
+        <source>EN, USD</source>
+        <target state="translated">انجليزى, دولار</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93c4b9db0302f1ffacf53cbbb9bf0ebc8b8b74ae" datatype="html">
+        <source>choose language</source>
+        <target state="translated">اختار اللغه</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7c155bd8c1e9c956d56260f971574b903d166fff" datatype="html">
+        <source>Arabic (AR)</source>
+        <target state="translated">عربى (AR)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="de6c230b981bced88db4b666f57ac155bd2d55a1" datatype="html">
+        <source>English (EN)</source>
+        <target state="translated">انجليزى (EN)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="597900da6074a047caa3f392cc84a943c2698ff8" datatype="html">
+        <source>choose currency</source>
+        <target state="translated">اختار العمله</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8b06821b08d4bb06d8ba5b27cd7407925106543c" datatype="html">
+        <source>RUB (₽)</source>
+        <target state="translated">RUB (₽)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fe76d9a8b7bbac31727a57822a30241b446825ba" datatype="html">
+        <source>USD ($)</source>
+        <target state="translated">USD ($)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="51025e73fe3921966d4b5d1228a3ecb1d7bf0fb8" datatype="html">
+        <source>EGP (ج.م)</source>
+        <target state="translated">EGP (ج.م)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d81f00c85d3b507f3e3d78bfc617a2c66e028391" datatype="html">
+        <source>New</source>
+        <target state="translated">جديد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="532152365f64d8738343423767f1130c1a451e78" datatype="html">
+        <source>Catalog</source>
+        <target state="translated">الأقسـام</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/catalog/catalog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dfc3c34e182ea73c5d784ff7c8135f087992dac1" datatype="html">
+        <source>All</source>
+        <target state="translated">الكل</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fbe3566f02d41ca8766f67670ac4e5a784cae1a5" datatype="html">
+        <source>dresses</source>
+        <target state="translated">الفساتين</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b54cb17be1d00f5b2ba699d6b03de3c7c021947c" datatype="html">
+        <source>jacket &amp; sleeveless</source>
+        <target state="translated">الجواكت</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a32d80b7930ef87b06ab975afdb3322e69dc49b" datatype="html">
+        <source>tops &amp; bodysuits</source>
+        <target state="translated">التوب و البودى</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="25d72d8adf3dfbe4051f2d74da469af423dc44dc" datatype="html">
+        <source>Trousers &amp; Shorts</source>
+        <target state="translated">البنطلونات و الشورتات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="daa3029e0521f6994a49057a54678fe3547c0680" datatype="html">
+        <source>shirts &amp; blouses</source>
+        <target state="translated">قمصان وبلوزات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/catalog/catalog.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9335e722307c5fbde29f95daa8e572e26886af6d" datatype="html">
+        <source>t-shirt&amp;tops</source>
+        <target state="translated">التيشيرتات و التوب</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10a4416d9ada2eca9c9f17fcf0fb1bc9af2724b8" datatype="html">
+        <source>outer clothing</source>
+        <target state="translated">الملابس الخارجيه</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="feb54d4107be704ffa9381326eab216b72021dae" datatype="html">
+        <source>suits</source>
+        <target state="translated">بدل وجواكت</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/catalog/catalog.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="65761b4b8881317c239e8fdd112e062a082bce03" datatype="html">
+        <source>skirts</source>
+        <target state="translated">البلوزات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6092bb2a5d8d9aca468a0007bc1af1c21e8f454c" datatype="html">
+        <source>Soon</source>
+        <target state="translated">قريبا</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ceb289d93d9eb6ccd446c878855e97e923b52211" datatype="html">
+        <source>Sale</source>
+        <target state="translated">التخفيضات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11a0771f88158a540a54e0e4ec5d25733d65fc0e" datatype="html">
+        <source>Favorite</source>
+        <target state="translated">المفضله</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d2a7deb7096cada2c3177157652680fe7e6de0ed" datatype="html">
+        <source>Projects</source>
+        <target state="translated">المشاريع</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f9193bec2ee1d81fdcbe2ac042b8cfe6e62209b" datatype="html">
+        <source>collection</source>
+        <target state="translated">الفئات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="57fda6fe12c3199f5a73758206363d8d7f0f998c" datatype="html">
+        <source>For Buyers</source>
+        <target state="translated">للعماء</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="433f276316e47648d00fc9d79d229ef64cd2b725" datatype="html">
+        <source>Payment &amp; Shipping</source>
+        <target state="translated">الدفع والشحن</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="48c892994521c1efc138ba3f71214aee0dd20121" datatype="html">
+        <source>Returns</source>
+        <target state="translated">المرتجعات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ae3a6ec655818ca2de2fbad2af44690342d89c9c" datatype="html">
+        <source>composition &amp; Care</source>
+        <target state="translated">التكوين والرعايه</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="00a6c167b6b52d86cccab2979899c0cb1711db6e" datatype="html">
+        <source>The Privacy Policy</source>
+        <target state="translated">الخصوصيه</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="73546446e442c1b3861297089d5436ee268b4866" datatype="html">
+        <source>User Agreement</source>
+        <target state="translated">اتفاق المستخدم</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ec5f4ab67d4f5d67c970aee74b2915a666e5cd70" datatype="html">
+        <source>contacts</source>
+        <target state="translated">التواصل</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="994363f08f9fbfa3b3994ff7b35c6904fdff18d8" datatype="html">
+        <source>Profile</source>
+        <target state="translated">الحساب</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8c5b9aca60c293ba60d8abbcbfbe818b36621cfa" datatype="html">
+        <source>about us</source>
+        <target state="translated">من نحن</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/about-us/about-us.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="805fd62599f89a695cc9c0a1ef16b457d5c1f388" datatype="html">
+        <source>Our Goal Is<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br>"/>Your Beauty</source>
+        <target state="translated">هدفنا هو جمالك</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/about-us/about-us.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9b934c17e6025b2c09a858c80c3f58c0943cf6a8" datatype="html">
+        <source>Read More</source>
+        <target state="translated">اقرأ المزيد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/about-us/about-us.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21c345a8487c7e209a88bdab32a0470cb254b16f" datatype="html">
+        <source> the concept of our Namelazz has been based on our customer images :elegant, feminine And sophisticated girls. we are strongly inspired by tournuers of the woman body which we try to accentute with the perfect fit and simplicity of our clothes </source>
+        <target state="translated"> وقد استند مفهوم Namelazz لدينا على صور عملائنا : أنيقة ، أنثوية ومتطورة الفتيات. نحن مستوحاة بقوة من tournuers من جسم المرأة التي نحاول أن أكسنت مع تناسب الكمال وبساطة ملابسنا </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/about-us/about-us.component.html</context>
+          <context context-type="linenumber">20,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="26f37233a50a41746751fec3c2c8c9cd94627c7f" datatype="html">
+        <source>bestseller</source>
+        <target state="translated">الاكثر مبيعا</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/bestsellers/bestsellers.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="88a7f50bf42193d10ac4f2eac68b5d8afbe883ce" datatype="html">
+        <source>Popular Categories</source>
+        <target state="translated">أقسـام شـائعة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/bestsellers/bestsellers.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="58d6e1f782db1e695117ee96760ed71e5ef807c5" datatype="html">
+        <source>Shop All</source>
+        <target state="translated">تسوق الكل</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/bestsellers/bestsellers.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bfd9dbad49e4279e00a2c880ae2fb1383a2e6c18" datatype="html">
+        <source>explore our love</source>
+        <target state="translated">استكشاف حبنا</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/catalog/catalog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a776fe08661ccb62111a598ae31b1e5d2120693f" datatype="html">
+        <source>Go To Catalog</source>
+        <target state="translated">الانتقال إلى الاقسـام</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/catalog/catalog.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76d4bccdcc319db05c489b8b0c37f9a47089aa1f" datatype="html">
+        <source>trousers</source>
+        <target state="translated">بنطلونات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/catalog/catalog.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2c1add3202413cf8e93097033572cbb0915e943d" datatype="html">
+        <source>corsets &amp; tops</source>
+        <target state="translated">الكورسيهات و التوب</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/catalog/catalog.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cf111b3ec9a71319d3dc65435378c56b594a9755" datatype="html">
+        <source>/ 0 1</source>
+        <target state="translated">/ 1 0</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aeb782243799c697934ec82ed294b11492de5a83" datatype="html">
+        <source>Wind In The Hair</source>
+        <target state="translated">الريـاح فـي الشعـر</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="27a91d62dafbbd22f439b417f99ff3f2ec1fe74f" datatype="html">
+        <source>cruise collection</source>
+        <target state="translated">مجموعة الرحلات البحرية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6ef7e76c895536d3582a4d9635669cc29eeac531" datatype="html">
+        <source>n</source>
+        <target state="translated">n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="29d8b58fa2b19abc570298aa358691c833f5b181" datatype="html">
+        <source>e</source>
+        <target state="translated">e</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56db2b839e465d95a72b8983648ba2b8e7c8f87a" datatype="html">
+        <source>w</source>
+        <target state="translated">w</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f9f05050ee40c5ed9527ce2f709a9a38c27d392" datatype="html">
+        <source>c</source>
+        <target state="translated">c</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fb9540c004fd729aaf209c593dfdd87cec87f9ad" datatype="html">
+        <source>o</source>
+        <target state="translated">o</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="305ebfd8db34da3a2d7c7f6f9f870e1dd1977a01" datatype="html">
+        <source>l</source>
+        <target state="translated">l</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8ec76abf762558f78f4f0b86ab7e8ef40aa67d26" datatype="html">
+        <source>t</source>
+        <target state="translated">t</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="13509a323329e8aaa4041c0f2e8ae7bed17a68e7" datatype="html">
+        <source>i</source>
+        <target state="translated">i</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b32a8b612b9c069b112ae17190846bfa1f2e622f" datatype="html">
+        <source>/ 0 2</source>
+        <target state="translated">/ 2 0</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e1b15737aba893ea3b1edc10a4f17b42100e15d2" datatype="html">
+        <source>/ 0 3</source>
+        <target state="translated">/ 3 0</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/header/header.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9099523c599117bd85437edda6e162e022347cea" datatype="html">
+        <source>« Agirl Should be<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br>"/>Two things: Classy<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br>"/>And Fabulous »</source>
+        <target state="translated">« الفتاه يجب ان تكون: أنيقه ورائعه »</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d6f2337f0df59d0bdbe4f228219e2c95caeafdb9" datatype="html">
+        <source>New Collection Inspired By Coco Channel</source>
+        <target state="translated">مجموعة جديدة مستوحاة من قناة كوكو</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1801bfa6ba6eb7a02fd61bafb37e35f5d0aebfdc" datatype="html">
+        <source>Learn More</source>
+        <target state="translated">اعرف المزيد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2d95140cbdf52b336b35a8a3919cdbfa7868ac8f" datatype="html">
+        <source>lookbook 2020</source>
+        <target state="translated">تصـاميم 2020</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/lookbook/lookbook.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b1aa534187a549f3753c3f56e0b4ef88754ed549" datatype="html">
+        <source>Spring<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br>"/>lookbook</source>
+        <target state="translated">تصـاميم الربـيع</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/lookbook/lookbook.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="556d898f0866cbe28502f7f7d556d6a7d7bdeaf6" datatype="html">
+        <source>Go To Lookbook</source>
+        <target state="translated">انتقل إلى معرض التصاميم</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/lookbook/lookbook.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7902c90012e3e1e620a585cda54d6612597c2fea" datatype="html">
+        <source> shop the full collection of spring lookbook to find what you are looking for today </source>
+        <target state="translated">تسوق المجموعة الكاملة من تصاميم الربيع للعثور على ما تبحث عنه اليوم</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/lookbook/lookbook.component.html</context>
+          <context context-type="linenumber">26,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7779725694ea0e379fe29a54c8d91bab881361d6" datatype="html">
+        <source> the concept of our Namelazz has been based on our customer images :elegant, feminine And sophisticated girls. we are strongly inspired by tournuer of the woman body which we try to accentute with the perfect fit and simplicity of our clothes </source>
+        <target state="translated"> يعتمد مفهوم Namelazz على صور عملائنا: فتيات أنيقات وأنثويات ومتطورات. نحن مستوحون بقوة من مرتدي جسد المرأة الذين نحاول إبرازهم مع الملاءمة المثالية والبساطة لملابسنا </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/lookbook/lookbook.component.html</context>
+          <context context-type="linenumber">50,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f55347262ed35e8adf95961ed37b47601ba5bb2f" datatype="html">
+        <source>follow Us On instagram</source>
+        <target state="translated">تابعنا على الانستجرام</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/lookbook/lookbook.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

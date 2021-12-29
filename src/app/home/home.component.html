@@ -1,0 +1,17 @@
+<header [siteDirections]= "siteDirections"></header>
+<bestsellers [siteDirections]= "siteDirections" [products]="products"></bestsellers>
+
+<div class="more-info">
+    <div class="more-info__heading sub-heading" i18n>&laquo; Agirl Should be<br>Two things: Classy<br>And Fabulous &raquo;</div>
+    <div class="more-info__text" i18n>New Collection Inspired By Coco Channel</div>
+    <a class="link link--semi-bold"> 
+        <span class="link__name" i18n>Learn More</span>
+        <svg class="link__arrow">
+            <use [attr.xlink:href]="'../../../assets/img/sprite.svg#icon-'+ siteDirections.endDirection + '-arrow'"></use>
+        </svg>
+    </a>
+</div>
+
+<catalog [siteDirections]= "siteDirections"></catalog>
+<about-us [siteDirections]= "siteDirections"></about-us>
+<lookbook [siteDirections]= "siteDirections"></lookbook>

@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, HostListener, Inject, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { combineLatest, fromEvent, Observable, Subscription } from 'rxjs';
+import { LocaleService } from './shared/services/locale.service';
 import { UiService } from './shared/services/ui.service';
 
 @Component({
@@ -28,15 +29,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private uiService: UiService,
+    private localService: LocaleService,
     private zone: NgZone,
-    private elRef: ElementRef,
-    @Inject(DOCUMENT) private document: any) {
+    @Inject(DOCUMENT) private document: any) {      
       this.window = this.document.defaultView;
      }
 
 
   ngOnInit() {
-
+    this.localService.setHtmlDirection()
+    
     this.setupClickListener();
     this.toggoleNav = this.uiService.openSideNav;
     this.showLoginCard = this.uiService.ToggoleLoginCard

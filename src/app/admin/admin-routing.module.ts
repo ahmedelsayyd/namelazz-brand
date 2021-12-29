@@ -9,7 +9,7 @@ import { ProductsComponent } from './dashboard/products/products.component';
 
 const routes: Routes = [
   {
-    path: 'admin/dashboard', component: DashboardComponent,
+    path: '', component: DashboardComponent,
     children: [
       { path: 'products', component: ProductsComponent },
       { path: 'products/:id/edit', component: AddProductComponent },

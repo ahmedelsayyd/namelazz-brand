@@ -35,9 +35,16 @@
 .cart{
     background-color: $color-primary;
     padding: 14rem 0;
+    @include media-breakpoint-down(md){ padding: 14rem 1.5rem;}
+    @include media-breakpoint-only(sm){ padding: 14rem 8rem;}
+    @include media-breakpoint-down(xs){ padding-bottom: 2rem;}
 
     .sub-heading{
         font-size: 4rem;
+        &.total-txt{
+
+            @include media-breakpoint-down(sm){margin-top: 5rem;}
+        }
     }
     &__route{
         margin-bottom: 1rem;
@@ -47,6 +54,7 @@
         padding: 4rem;
         margin-top: 1.5rem;
         border: 1px solid rgba($color-dark-500, .4);
+        @include media-breakpoint-down(md){ padding: 2.35rem;}
 
         span{
             display: inline-block;

@@ -9,6 +9,7 @@
 
         <span class="login__title">Login</span>
 
+        <p *ngIf="loginFaild" class="input-requirments--error">{{errorMsg}}</p>
         <form class="login__form" (onSubmit)="login(loginForm)" #loginForm="ngForm">
      
             <div class="form__group">

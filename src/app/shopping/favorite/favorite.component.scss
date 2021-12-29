@@ -3,6 +3,7 @@
 .fav{
     padding: 16rem 0;
     background-color: $color-primary;
+    @include media-breakpoint-down(md){padding: 16rem 1.5rem;}
 
     &__heading{
         margin-bottom: 4rem;

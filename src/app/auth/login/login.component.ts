@@ -8,6 +8,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  loginFaild = false
+  errorMsg: string
   constructor(private authService:AuthService,) { }
 
   ngOnInit(): void {
@@ -17,5 +19,12 @@ export class LoginComponent implements OnInit {
   login(loginForm){
     
     this.authService.loginWithEmailAndPassword(loginForm.value,false)
+    .then(u => console.log(u))
+    .catch(err =>{
+      console.log(err.message)
+      this.loginFaild = true
+      this.errorMsg = err.message
+      
+    })
   }
 }

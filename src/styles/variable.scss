@@ -1,10 +1,30 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
 
 :root{
     --nav-color: #fbf6f2;
     --nav-background: transparent;
     --nav-height: 8.4rem;
 
+    --start-direction: left;
+    --end-direction: right;
+    --transform-direction: 1;
   }
+
+//   $direction           :rtl;
+// $opposite-direction   :ltr;
+
+// $start-direction     :right;
+// $end-direction       :left;
+
+// $transform-direction :-1;
+
+
+$start-direction : var(--start-direction);
+$end-direction : var(--end-direction);
+$transform-direction :var(--transform-direction);
+
   
 $color-primary:  #fbf6f2;
 $color-primary-dark: #cfc7be;

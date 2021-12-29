@@ -3,13 +3,17 @@
 .sideNav{
     position: fixed;
     top: 0;
+    inset-inline-start: 0;
     width:30%;
     min-height: 100vh;
     background-color: $color-primary;
     z-index: 10;
     font-size: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 2rem 4rem  rgba($color-accent-dark, .25);;
+    box-shadow: 0 2rem 4rem  rgba($color-accent-dark, .25);
+    @include media-breakpoint-down(md){width: 35%;}
+    @include media-breakpoint-down(sm){width: 45%;}
+
 
     &__scroll{
         height: calc(100vh - 10.5rem);
@@ -143,7 +147,7 @@
     }
 
     &__subMenue{
-        padding-left: 2rem;
+        padding-inline-start: 2rem;
         overflow: hidden;
         transform-origin: top center;
 
@@ -156,7 +160,10 @@
     &__user{
         display: flex;
         gap: 1rem;
-        margin: 1rem 0 0 4rem;    
+        margin-top: 1rem;
+        margin-inline-start: 4rem;
+        // margin: 1rem 0 0 4rem;
+
         cursor: pointer;   
 
         span{

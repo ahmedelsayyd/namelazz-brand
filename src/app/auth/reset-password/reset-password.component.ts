@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { take } from 'rxjs/operators';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -17,7 +14,6 @@ export class ResetPasswordComponent implements OnInit {
     private route :ActivatedRoute, 
     private router:Router, 
     private auth:AngularFireAuth,
-    private msg: NzMessageService,
     private authService: AuthService) { }
 
   ngOnInit(): void {

@@ -9,7 +9,7 @@ import { NzSelectSizeType } from 'ng-zorro-antd/select';
 import { Attribute } from 'src/app/shared/models/attribute.model';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, take } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 import { Product } from 'src/app/shared/models/product.model';
 
 

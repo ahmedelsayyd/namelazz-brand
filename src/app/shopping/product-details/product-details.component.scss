@@ -4,32 +4,38 @@
 
     padding: 12rem 0 0;
     background-color: $color-primary;
-
+    
+    
     .path{
         display: block;
         margin-bottom: 1.5rem;
     }
 
     .product{
-
+        
         padding-bottom: 9rem;
+
         &__images-wraper{
             display: flex;
             justify-content: space-between;
             height: 48rem;
             //height: 100%;
+            // @include media-breakpoint-down(md){ height: 43rem;}
+            @include media-breakpoint-only(md){ flex-direction: column-reverse; gap: .75rem; height: auto;}
 
             img{
                 width: 100%;
             }
         }
-
+        
         &__main-image{
             flex: 0 0 85%;
-
+            
+            
             img{
                 width: 85%;
                 height: 100%;
+                @include media-breakpoint-down(md){height: 43rem; width: 95%;}
             }
         }
 
@@ -38,14 +44,17 @@
             flex-direction: column;
             margin-right: 1rem;
             flex: 0 0 15%;
+            @include media-breakpoint-only(md){ width: 100%; gap: .75rem; flex-direction: row; justify-content: center; margin-right: 0;}
 
             .swiper-slide{
                 height: auto;
+                @include media-breakpoint-only(md){ width: 7rem;}
             }
 
             img{
                 margin-bottom: 1rem;
                 transition: all .3s;
+
                 &.active{
                     opacity: .4;
                     border: 1px solid $color-accent-success;
@@ -55,8 +64,17 @@
         }
 
 
+        &__info{
+            .wraper-for-media{
+                @include media-breakpoint-down(sm){display: flex; justify-content: space-between;align-items: end; margin-bottom: 3rem;}
+            }
+        }
+
         &__name{
             margin-bottom: 0;
+            @include media-breakpoint-down(md){ font-size: 3rem;}
+            @include media-breakpoint-down(sm){ font-size: 2.4rem;}
+
         }
 
         &__price{
@@ -64,6 +82,7 @@
             font-weight: 500;
             font-family: "Cinzel", serif;
             margin: .75rem 0 2.2rem;
+            @include media-breakpoint-down(sm){ font-size: 2.4rem; margin: 0;}
         }
 
         &__colors{
@@ -92,6 +111,7 @@
                     justify-content: center;
                     border-radius: 50%;
                     transition: all .2s;
+                    cursor: pointer;
 
                     &.active,
                     &:hover{
@@ -133,6 +153,7 @@
                     padding: 0 .75rem;
                     margin-right: 1.2rem;
                     transition: all .2s;
+                    cursor: pointer;
 
                     &:hover,
                     &.active{
@@ -150,6 +171,7 @@
             border-bottom: 1px solid rgba($color-dark-500, .5);
             display: flex;
 
+            .button{@include  media-breakpoint-down(sm) {flex: 1;}}
 
             .btn-to-fav{
                 padding: .5rem .75rem;
@@ -203,6 +225,7 @@
                 text-transform: uppercase;
                 margin-bottom: 1.5rem;
                 cursor: pointer;
+                @include media-breakpoint-down(sm){flex-direction: column; align-items: flex-end;}
 
                 li{
                     transition: all .2s;
@@ -230,9 +253,12 @@
     .related-products{
         padding: 9rem 0;
         background-color: lighten($color-primary, .95);
+        @include media-breakpoint-down(sm){ margin: 6rem 0;}
+
 
         &__heading{
             margin-bottom: 4rem;
+            padding-left: 1.5rem;
         }
 
         ::ng-deep .product{
@@ -246,6 +272,7 @@
     
                 height: 80%;
                 transition: all .4s;
+                @include media-breakpoint-down(sm){height: 72%;}
                 
                 img{
                     height: 100%;
@@ -274,7 +301,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        @include media-breakpoint-down(sm){ margin-top: 5rem;}
 
 
         &-handel{

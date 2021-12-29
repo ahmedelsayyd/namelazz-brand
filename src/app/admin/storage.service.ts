@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from "@angular/core";
 import { AngularFireStorage } from "@angular/fire/storage";
-import { BehaviorSubject, combineLatest, Observable, Subject } from "rxjs";
-import { finalize, last, map, switchMap } from "rxjs/operators";
+import { BehaviorSubject } from "rxjs";
+import {  last, switchMap } from "rxjs/operators";
 
 @Injectable({
     providedIn: "root"

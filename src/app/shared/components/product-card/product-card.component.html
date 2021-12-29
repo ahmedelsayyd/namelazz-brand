@@ -8,7 +8,7 @@
     </div>
     <div class="product__details" (click)="toProductDetails(product.id)">
         <span class="product__name paragraph paragraph--short">{{product.name}}</span>
-        <span class="product__price">{{product.price | currency : 'RUB': 'symbol-narrow':'3.0' : 'ru'}}</span>
+        <span class="product__price">{{product.price | myCurrency}}</span>
     </div>
     <div class="line mt-3 mb-4"></div>
 
@@ -25,7 +25,7 @@
     <a class="link link--bold"> 
         <span class="link__name">Show More</span>
         <svg class="link__arrow">
-            <use xlink:href="../../../assets/img/sprite.svg#icon-right-arrow"></use>
+            <use [attr.xlink:href]="'../../../assets/img/sprite.svg#icon-'+ (localService.siteDirections|async).endDirection + '-arrow'"></use>
         </svg>
     </a>
 </div>
@@ -43,13 +43,13 @@
         <span class="product__name paragraph paragraph--short">{{catalogProduct.category}}</span>
     </div>
 
-    <div class="line mt-3 mb-4">
+    <div class="line mt-3 m mb-4">
 
     </div>
     <a class="link link--bold"> 
         <span class="link__name" routerLink="/catalog/all">Show More</span>
         <svg class="link__arrow">
-            <use xlink:href="../../../assets/img/sprite.svg#icon-right-arrow"></use>
+            <use [attr.xlink:href]="'../../../assets/img/sprite.svg#icon-'+ (localService.siteDirections|async).endDirection + '-arrow'"></use>
         </svg>
     </a>
 </div>

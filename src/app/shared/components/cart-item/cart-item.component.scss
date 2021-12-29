@@ -19,6 +19,8 @@
     &__image{
         width: 13rem;
         margin-right: 2rem;
+        @include media-breakpoint-down(md){ width: 11rem;}
+
 
         img{
             width: 100%;
@@ -36,6 +38,8 @@
             font-family: "Cinzel", serif;
             font-size: 2.3rem;
             font-weight: 500;
+            @include media-breakpoint-down(md){ font-size: 2rem;}
+
         }
 
         &--sub{
@@ -43,6 +47,8 @@
             color: $color-dark-100;
             font-size: 1.6rem;
             text-transform: lowercase;
+            @include media-breakpoint-down(md){ font-size: 1.5rem;}
+
         }
     }
 
@@ -69,6 +75,10 @@
             // &::first-letter{
             //     padding-right: .7rem;
             // }
+        }
+
+        i{
+            display: none;
         }
     }
 

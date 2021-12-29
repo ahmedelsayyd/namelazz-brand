@@ -1,7 +1,7 @@
 @import '../../../styles/variable.scss';
 
 .footer{
-    display: flex;
+    overflow: hidden;
 
     &__info{
         background-color: $color-dark-500;
@@ -26,6 +26,7 @@
         &--lg{
             line-height: 1.2;
             margin-bottom: 3.5rem;
+            @include media-breakpoint-down(xs){ font-size: 3.75rem;}
         }
     }
 
@@ -62,6 +63,7 @@
             align-items: center;
             justify-content: center;
             width: 50%;
+            @include media-breakpoint-down(xs){ width: 60%;}
         }
     }
 
