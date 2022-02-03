@@ -22,7 +22,9 @@ html {
 
   @include media-breakpoint-down(md) { font-size: 60.25%; }
   @include media-breakpoint-down(sm) { font-size: 56%; }
-  @include media-breakpoint-up(xxl) { font-size: 75%; }
+  // @include media-breakpoint-up(xxl) { font-size: 75%; }
+
+  @media only screen and (min-width: 1400px){ font-size: 75%;}
 
 
 }
