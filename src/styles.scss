@@ -24,22 +24,6 @@ html {
   @include media-breakpoint-down(sm) { font-size: 56%; }
   // @include media-breakpoint-up(lg) { font-size: 75%; }
 
-  // @media only screen and (max-width: $bp-larg) {
-  //   font-size: 50%;
-  // }
-  // @include respond(tab-land){
-  //   font-size: 56.25%;         //1rem = 9px -- 9/16= 56.25%
-  // }
-
-  // @include respond(tab-port){
-  //     font-size: 50%;            //1rem = 8px -- 8/16= 50%
-  // }
-
-
-  // @include respond(big-desktop){
-  //     font-size: 75%;            //1rem = 12px -- 15/16= 75%
-  // }
-
 
 }
 
@@ -52,6 +36,7 @@ body {
   font-size: 1.6rem;
   overflow-x: hidden;
   flex-direction: row;
+  background-color: $color-primary;
 
 }
 

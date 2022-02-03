@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, QueryList, Ren
 import { ActivatedRoute } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { combineLatest, Subject, Subscription } from 'rxjs';
-import { map, switchMap, take, takeUntil } from 'rxjs/operators';
+import { switchMap, takeUntil } from 'rxjs/operators';
 import { Product } from 'src/app/shared/models/product.model';
 import { MediaService } from 'src/app/shared/services/media.service';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -150,9 +150,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit , OnDestro
   
   selectSize(size) {
 
-    this.selectedSize = size;
-    console.log(this.selectedSize);
-    
+    this.selectedSize = size;    
     let sizesListElms = this.sizesList.nativeElement.childNodes;
 
     // this.renderer.addClass(sizesListElms[0], 'active')
@@ -184,10 +182,16 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit , OnDestro
     this.cartService.addOrUpdateToCart(product,{quantity: 1}).then(()=>{
       this.msg.success('Product Successfully added to cart')
     })
-    this.productService.editProduct(this.product.id, {inCart: true})
+    // this.productService.editProduct(this.product.id, {inCart: true})
     
   }
 
+
+  isInCart(productId) : boolean{
+    
+    const productsInCartMap = new Map<string, boolean>(JSON.parse(localStorage.getItem('productsInCart')))
+    return productsInCartMap.get(productId)
+  }
 
   addToFavorite(product){
     this.isFavorite = !this.isFavorite

@@ -40,7 +40,7 @@ export class UiService {
 
   changeNavTheme(scrollTop, loadedComponent) {
     if (loadedComponent != "home" && loadedComponent != "UserComponent" && scrollTop <= 5) {
-
+      
       document.documentElement.style.setProperty('--nav-background', '#fbf6f2')
       document.documentElement.style.setProperty('--nav-color', '#1a1615')
       document.documentElement.style.setProperty('--nav-height', 8 + 'rem')
@@ -68,7 +68,7 @@ export class UiService {
   }
 
   updateLoadedComponent(loadedComponent) {
-
+    
     (loadedComponent != "HomeComponent" ? this.setLoadedComponent(loadedComponent)
       : this.setLoadedComponent('home'));
   }

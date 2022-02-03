@@ -1,0 +1,44 @@
+@import "../../../styles/variable.scss";
+
+.sale{
+    padding: 16rem 0;
+    background-color: $color-primary;
+
+    &__heading{
+        margin-bottom: 4rem;
+        width: 100%;
+
+    }
+
+    &__products{
+
+        margin-bottom: 2rem;
+        ::ng-deep .product{
+            height: 42rem;
+            margin-bottom: 2rem;
+            
+             &__image{
+    
+                height: 80%;
+                transition: all .4s;
+                
+                img{
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        
+            &__details{
+                height: 10%;
+            }
+            .link{
+                display: none;
+            }
+        }
+
+        ::ng-deep .product:hover .product__image{
+            height: 65%;
+        }
+        
+    }
+}

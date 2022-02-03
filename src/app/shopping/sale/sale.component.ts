@@ -16,7 +16,7 @@ export class SaleComponent implements OnInit {
 
     this.productService.getAllProducts().subscribe(products =>{
       console.log(products);
-      this.saleProducts= products
+      this.saleProducts= products.slice(20)
       
     })
   }

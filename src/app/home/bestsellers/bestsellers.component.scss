@@ -3,7 +3,8 @@
 .bestseller{
     padding: 9rem 0;
     background-color: $color-primary;
-    @include media-breakpoint-down(xs){padding: 6rem 1.75rem;}
+    @include media-breakpoint-down(md){padding: 9rem 1.5rem;}
+    @include media-breakpoint-down(xs){padding: 6rem 1.5rem;}
 
 
     

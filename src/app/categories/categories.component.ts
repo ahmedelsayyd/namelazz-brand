@@ -1,10 +1,11 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, Inject, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 import { BehaviorSubject, combineLatest, fromEvent, Observable, Subject, Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { DashboardService } from 'src/app/admin/dashboard.service';
-import { toggoleDropdowntrigger } from 'src/app/shared/animations/animation';
+import { fadeInOut, toggoleDropdowntrigger } from 'src/app/shared/animations/animation';
 import { PaginationData, PaginationService } from 'src/app/shared/components/pagination/pagination.service';
 import { Product } from 'src/app/shared/models/product.model';
 import { FilterService } from 'src/app/shared/services/filter.service';
@@ -16,7 +17,7 @@ import { MediaService } from '../shared/services/media.service';
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
   animations: [
-    toggoleDropdowntrigger
+    toggoleDropdowntrigger,
   ]
 })
 export class CategoriesComponent implements OnInit, OnDestroy {
@@ -33,7 +34,7 @@ export class CategoriesComponent implements OnInit, OnDestroy {
 
   routeData:any
 
-  categories=['All', 'Dresses', 'Shirts & Blows', 'Outer Wear', 'Jackt & sleeveless', 'Tops & bodysweets', 'Suits', 'T-shirt & tops', 'Trousers & shorts', 'Skirts']
+  categories=['All', 'Dresses', 'Shirts & Blows', 'Outer Wear', 'Jackt & sleeveless', 'Tops & bodysuits', 'Suits', 'T-shirt & tops', 'Trousers & shorts', 'Skirts']
   visibleCategories = []
   hiddenCategories = []
 
@@ -120,15 +121,16 @@ export class CategoriesComponent implements OnInit, OnDestroy {
     @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit(): void {
+
    
     // GET ALL PRODUCTS
     this.productsSub = this.productService.getAllProducts()
     .pipe(
-      switchMap((products:Product[])=>{
+      switchMap((products: Product[])=>{
       this.products = products
-      return combineLatest([this.route.data, this.route.queryParams,this.priceRang$, this.PaginationService.currentPageDetails])
+      return combineLatest([this.route.data, this.route.queryParams, this.priceRang$, this.PaginationService.currentPageDetails])
 
-      }))
+      }),distinctUntilChanged())
     .subscribe(([data, params, priceRang, pagData]: [Data,Params, number[] ,PaginationData])=>{
       
       
@@ -205,8 +207,9 @@ export class CategoriesComponent implements OnInit, OnDestroy {
   }
 
   getCategoryRoute(category: string){
-    const cleanStr = category.toLocaleLowerCase().trim().replace(/\s+/g,'')
-    return ['/catalog/', cleanStr]
+
+      const cleanStr = category.toLocaleLowerCase().trim().replace(/\s+/g,'')
+      return ['/catalog/', cleanStr]
   }
 
   // click Listener for Dropdowns Toggole

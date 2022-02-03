@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeResolver } from '../resolvers/home.resolver';
+import { ProductsResolver } from '../resolvers/products.resolver';
 import { HomeComponent } from './home.component';
 
-const routes: Routes = [{path: '', pathMatch: 'full', component: HomeComponent}];
+const routes: Routes = [
+  {path: 'home', component: HomeComponent}
+];
 
 @NgModule({
   imports: [

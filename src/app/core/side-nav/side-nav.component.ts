@@ -28,6 +28,9 @@ export class SideNavComponent implements OnInit, OnDestroy{
     buyers: {isOpened: false}
   }
 
+  selectedLang: string = 'en'
+  selectedCurr: string = 'ru'
+
   eventSub:Subscription
   sideNavSub:Subscription
   

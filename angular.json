@@ -64,7 +64,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": false
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -88,43 +90,17 @@
 
             "en": {
               "localize": ["en"],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "outputPath": "dist/namelazz-brand",
+              "outputPath": "dist/namelazz-brand-en",
               "i18nMissingTranslation": "error",
               "baseHref": "/en/"
             },
             "ar": {
               "localize": ["ar"],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "outputPath": "dist/namelazz-brand",
-              "i18nMissingTranslation": "error"
+              "outputPath": "dist/namelazz-brand-ar",
+              "i18nMissingTranslation": "error",
+              "baseHref": "/ar/"
             }
+
           },
           "defaultConfiguration": ""
         },

@@ -14,7 +14,7 @@ export class ProductService {
   constructor(private fs:AngularFirestore) {
     // this.getAllProducts().subscribe(p=>{
     //   p.forEach(x=>{
-    //     this.editProduct(x.id, {isFavorite:false})
+    //     this.editProduct(x.id, {inCart:false})
     //   })
     // })
 
@@ -70,8 +70,8 @@ export class ProductService {
     return this.fs.collection(`products/`).add(product)
   }
 
+
   editProduct(id, data){
-    
     return this.fs.doc(`/products/${id}`).update(data)
   }
 

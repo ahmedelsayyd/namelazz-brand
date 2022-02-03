@@ -128,18 +128,10 @@
             }
 
             &__modal{
-                // position: absolute;
-                // top: 140%;
-                // height: auto;
-                // background-color: $color-primary;
-                // box-shadow: 0 2rem 4rem  rgba($color-accent-dark, .25);
-                // z-index: 5;
-                // overflow: hidden;
-                // color: $color-dark-500;
 
                 &-filterBy{
                     left: 0;
-                    width: 40rem;
+                    width: 42rem;
                     @include media-breakpoint-down(xs){width: 100%;}
                 }
 

@@ -38,7 +38,7 @@ export class FilterService {
             this.filteredColors.delete(index)
 
             colorFilter =this.joinQueryParamsFilter(this.filteredColors);
-              this.notifyFilterChange('size', colorFilter)
+              this.notifyFilterChange('base_color', colorFilter)
               
             if(!(this.filteredColors.size >= 1)) this.selectedFilters.delete('color')
             return;
@@ -86,7 +86,7 @@ export class FilterService {
             this.filteredMaterials.delete(index)
 
             materialFilter =this.joinQueryParamsFilter(this.filteredMaterials);
-            this.notifyFilterChange('size', materialFilter)
+            this.notifyFilterChange('material', materialFilter)
             
             if(!(this.filteredMaterials.size >= 1)) this.selectedFilters.delete('material')
             return;

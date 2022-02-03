@@ -8,6 +8,7 @@
     background-color: $color-primary;
 
 
+
     a.link{
         color: $color-dark-500;
         text-decoration: underline;
@@ -18,15 +19,48 @@
         }
     }
     &__info{
+        @include media-breakpoint-down(xs){text-align: center; margin-bottom: 8rem;}
 
     }
 
+    &__feedback{
+        @include media-breakpoint-down(xs){display: flex; flex-direction: column; align-items: center;}
+
+        .form{
+
+            @include media-breakpoint-down(xs){  display: flex;flex-direction: column;align-items: center;}
+          
+            &__group{
+                @include media-breakpoint-down(xs){width: 100%};
+            }
+
+            .input--w-lg{
+                @include media-breakpoint-down(md){flex:0 0 95%;}
+                @include media-breakpoint-down(xs){flex:0 0 100%;}
+            }
+
+            .button{
+                @include media-breakpoint-down(xs){
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 50%;
+                }
+            }
+
+            &__policy{@include media-breakpoint-down(xs){margin-top: 2.5rem; font-size: 1.3rem;text-align: center;};}
+        }
+    }
 
     .our-shops{
         margin-top: 7rem;
     }
 
     .our-shop{
+
+        &__info{
+            @include media-breakpoint-down(sm){text-align: center; margin-top: 5rem;}
+        }
 
         .paragraph{
             color: rgba($color-dark-500, .6);
@@ -40,7 +74,8 @@
 
         &__gallery{
             width: 90%;
-            
+            @include media-breakpoint-down(sm){width: 100%;}
+
           .swiper {
             height: 50rem;
 

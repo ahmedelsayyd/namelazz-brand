@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { backOutTrigger } from '../../animations/animation';
 import { Product } from '../../models/product.model';
 import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 import { ProductService } from '../../services/product.service';
@@ -8,7 +9,8 @@ import { ShoppingCartService } from '../../services/shopping-cart.service';
 @Component({
   selector: 'cart-item',
   templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.scss']
+  styleUrls: ['./cart-item.component.scss'],
+  animations: [backOutTrigger]
 })
 export class CartItemComponent implements OnInit, OnDestroy {
 @Input() cartItem:ShoppingCartItem

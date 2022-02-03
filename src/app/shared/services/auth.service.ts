@@ -176,34 +176,34 @@ export class AuthService implements OnInit{
     return (this.userData !== null) ? true : false;
   }
 
-  get getToken() {
-      return this.auth.idToken
-  }
+//   get getToken() {
+//       return this.auth.idToken
+//   }
 
 
-  // Returns current user data
-  get currentUser() {
+//   // Returns current user data
+//   get currentUser() {
     
-    return this.isLoggedIn ? this.userData : null;
-  }
+//     return this.isLoggedIn ? this.userData : null;
+//   }
   
   
-  // Returns current user UID
-  get currentUserId(): string {      
-    return this.isLoggedIn ? this.userData?.uid : '';
-  }
+//   // Returns current user UID
+//   get currentUserId(): string {      
+//     return this.isLoggedIn ? this.userData?.uid : '';
+//   }
 
 
-  get currentUserObservable() {
-    return this.user$
-  }
+//   get currentUserObservable() {
+//     return this.user$
+//   }
 
 
 
-// Anonymous User
-  get currentUserAnonymous(): boolean {
-    return this.isLoggedIn ? this.userData.isAnonymous : false
-  }
+// // Anonymous User
+//   get currentUserAnonymous(): boolean {
+//     return this.isLoggedIn ? this.userData.isAnonymous : false
+//   }
 
 
     /* 

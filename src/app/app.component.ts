@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, NgZone, OnDestroy, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest, fromEvent, Observable, Subscription } from 'rxjs';
 import { LocaleService } from './shared/services/locale.service';
 import { UiService } from './shared/services/ui.service';
@@ -9,10 +10,12 @@ import { UiService } from './shared/services/ui.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
-
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('spinnerText') spinnerText: ElementRef
   isCollapsed = false;
   loadedComponent
+
+  isLoading:boolean = true
 
   toggoleNav: Observable<boolean>
   showLoginCard: Observable<boolean>;
@@ -31,6 +34,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private uiService: UiService,
     private localService: LocaleService,
     private zone: NgZone,
+    private route: ActivatedRoute,
     @Inject(DOCUMENT) private document: any) {      
       this.window = this.document.defaultView;
      }
@@ -50,6 +54,37 @@ export class AppComponent implements OnInit, OnDestroy {
       this.loadedComponent = loadedComponent
       this.uiService.changeNavTheme(scrollTop, loadedComponent)
     })
+
+
+
+    setTimeout(()=>{ this.isLoading= false},7000)    
+    
+  }
+  
+
+  ngAfterViewInit(){
+
+  // handel Loading SPINNER
+  this.spinnerText.nativeElement.innerHTML = this.spinnerText.nativeElement.textContent.replace(/\S/g, "<span>$&</span>")
+    const spinnerTextElements = this.spinnerText.nativeElement.childNodes
+
+    for(let [index, el] of spinnerTextElements.entries()){
+
+      let style ={
+        'color': '#1a1615',
+        'display': 'inline-block',
+        'position': 'absolute',
+        'text-transform': 'uppercase',
+        'transform-origin': '0 10rem',
+        'top': '-10rem',
+        'transform': `rotate(${index * 20}deg)`,
+        'line-height': '4.5',
+        'font-weight':'600'
+      }
+
+      for(let p in style)
+      el.style[p] = style[p]
+    }
   }
 
   

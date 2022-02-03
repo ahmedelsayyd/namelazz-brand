@@ -1,5 +1,5 @@
 
-<div class="product" *ngIf="product">
+<div class="product" *ngIf="product" @fadeIn>
 
     <div class="product__image" (click)="toProductDetails(product.id)">
         <!-- <img src="../../../../assets/img/product1.jpg" alt="" class="product__image"> -->
@@ -14,11 +14,11 @@
 
 
 
-    <div class="product__button" *ngIf="!product.inCart">
+    <div class="product__button" *ngIf="!isInCart(product.id)">
         <button class="button button--w-full" (click)="addToCart(product)">Add To Cart</button>
     </div>
 
-    <div class="product__button " *ngIf ="product.inCart">
+    <div class="product__button " *ngIf ="isInCart(product.id)">
         <button class="button button--w-full button--transparent" (click)="checkOut()" routerLink="/cart">Check Out</button>
     </div>
 
@@ -33,20 +33,20 @@
 
 
 
-<div class="product" *ngIf="loadedComponent === 'catalog'">
-    <div class="product__image">
-        <img [src]="catalogProduct.image" alt="" class="product__image">
+<div class="product" *ngIf="loadedComponent === 'catalog'" @fadeIn>
+    <div class="product__image" >
+        <img [src]="catalogProduct.image" alt="" class="product__image" >
         <!-- <img [src]="product.images[0]" alt="" class="product__image"> -->
 
     </div>
-    <div class="product__details">
+    <div class="product__details" >
         <span class="product__name paragraph paragraph--short">{{catalogProduct.category}}</span>
     </div>
 
     <div class="line mt-3 m mb-4">
 
     </div>
-    <a class="link link--bold"> 
+    <a class="link link--bold" > 
         <span class="link__name" routerLink="/catalog/all">Show More</span>
         <svg class="link__arrow">
             <use [attr.xlink:href]="'../../../assets/img/sprite.svg#icon-'+ (localService.siteDirections|async).endDirection + '-arrow'"></use>

@@ -16,12 +16,13 @@
 
   &--sm{
     font-size: 2.5rem;
+    @include media-breakpoint-down(sm){font-size: 2.3rem;}
 
   }
 
   &--md{
     font-size: 3.6rem;
-
+    @include media-breakpoint-down(sm){font-size: 3rem;}
   }
 }
 

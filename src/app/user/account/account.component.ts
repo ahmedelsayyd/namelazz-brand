@@ -11,7 +11,7 @@ import {
   SearchCountryField,
   PhoneNumberFormat
 } from "ngx-intl-tel-input";
-import { toggoleLoginCardtrigger } from 'src/app/shared/animations/animation';
+import { changePasswordCardtrigger } from 'src/app/shared/animations/animation';
 
 
 
@@ -22,7 +22,7 @@ import { toggoleLoginCardtrigger } from 'src/app/shared/animations/animation';
   animations: [
 
     //annimations trigger
-    toggoleLoginCardtrigger
+    changePasswordCardtrigger
   ]
 })
 export class AccountComponent implements OnInit , OnDestroy{

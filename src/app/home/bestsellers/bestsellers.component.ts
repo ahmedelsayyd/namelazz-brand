@@ -5,6 +5,7 @@ import {  distinctUntilChanged, switchMap, take} from 'rxjs/operators';
 import { PaginationService } from 'src/app/shared/components/pagination/pagination.service';
 import { Product } from 'src/app/shared/models/product.model';
 import { MediaService } from 'src/app/shared/services/media.service';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'bestsellers',
@@ -30,13 +31,13 @@ export class BestsellersComponent implements OnInit, OnDestroy {
   productSub:Subscription
 
 
-  constructor(private PaginationService: PaginationService, private mediaService: MediaService) { 
+  constructor(private PaginationService: PaginationService, private mediaService: MediaService, private productService:ProductService) { 
     this.layoutChanges$ = this.mediaService.layOutChangesListner(['(max-width: 575.98px)', '(min-width: 576px) and (max-width: 768px)'])
   }
 
   ngOnInit(): void {
 
-    this.productSub = this.products.pipe(take(1))
+    this.productSub = this.productService.getAllProducts().pipe(take(1))
     .pipe(switchMap((p) => {
       this.filteredProducts = p.slice(0,9)
 

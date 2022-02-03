@@ -2,5 +2,32 @@
 <side-nav></side-nav>
 <div class="overlay" *ngIf="((toggoleNav | async) || (showLoginCard | async))"></div>
 
-<router-outlet (activate)="onActive($event, outlet)" #outlet></router-outlet>
+<!-- Spinner >>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+<div class="spinner" *ngIf="isLoading">
+    <div class="overlay"></div>
+
+    <img class="img img__1 d-none d-md-block" src="../assets/img/start/start1.jpg" alt="">
+    <img class="img img__2" src="../assets/img/start/start2.jpg" alt="">
+    <img class="img img__3 d-none d-md-block" src="../assets/img/start/start3.jpg" alt="">
+    <img class="img img__4" src="../assets/img/start/start4.jpg" alt="">
+
+    <div class="spinner__banner"></div>
+    <svg viewBox="-2 -3 17 22">
+        <path
+        d="M12.2801 12.5042L2.01681 0H0V16H0.985995V2.46499L12.1008 15.9104L12.1457 16H13.2213V0H12.2801V12.5042Z">
+    </path>
+    </svg>
+    <div class="spinner__text">
+        <!-- <img src="../favicon.ico" alt=""> -->
+        <h2 class="text" #spinnerText>Namelazz-NameLazz-</h2>
+    </div>
+</div>
+
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+
+<div class="router-outlet">
+
+    <router-outlet (activate)="onActive($event, outlet)" #outlet></router-outlet>
+</div>
 <footer *ngIf="loadedComponent !='DashboardComponent'"></footer>

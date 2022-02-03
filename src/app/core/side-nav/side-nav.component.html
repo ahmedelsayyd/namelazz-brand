@@ -19,17 +19,17 @@
                 <div class="dropdown__group">
                     <span class="dropdown__title" i18n>choose language</span>
                     <div class="dropdown__choices-wrap">
-                        <a class="dropdown__choices active" i18n>Arabic (AR)</a>
-                        <a class="dropdown__choices" i18n>English (EN)</a>
+                        <a class="dropdown__choices" [class.active]="selectedLang == 'ar'" (click)="selectedLang = 'ar'" i18n>Arabic (AR)</a>
+                        <a class="dropdown__choices" [class.active]="selectedLang == 'en'" (click)="selectedLang = 'en'" i18n>English (EN)</a>
                     </div>
                 </div>
     
                 <div class="dropdown__group">
                     <span class="dropdown__title" i18n>choose currency</span>
                     <div class="dropdown__choices-wrap">
-                        <button class="dropdown__choices" i18n>RUB (₽)</button>
-                        <button class="dropdown__choices active" i18n>USD ($)</button>
-                        <button class="dropdown__choices" i18n>EGP (ج.م)</button>
+                        <button class="dropdown__choices" [class.active]="selectedCurr == 'ru'" (click)="selectedCurr = 'ru'" i18n>RUB (₽)</button>
+                        <button class="dropdown__choices" [class.active]="selectedCurr == 'usd'" (click)="selectedCurr = 'usd'" i18n>USD ($)</button>
+                        <button class="dropdown__choices" [class.active]="selectedCurr == 'egp'" (click)="selectedCurr = 'egp'" i18n>EGP (ج.م)</button>
                     </div>
                 </div>
             </div>

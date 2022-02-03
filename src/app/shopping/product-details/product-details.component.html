@@ -59,12 +59,12 @@
                     <div class="product__actions">
                         <button class="button button--lg" 
                         (click)="addToCart()" 
-                        *ngIf="!product?.inCart" 
+                        *ngIf="!isInCart(product.id)" 
                         trackFocus 
                         [isSelected]="selectedSize ? true : false">
                         ADD TO CART</button>
 
-                        <button class="button button--lg button--transparent" *ngIf="product?.inCart" routerLink="/cart">CHECK OUT</button>
+                        <button class="button button--lg button--transparent" *ngIf="isInCart(product.id)" routerLink="/cart">CHECK OUT</button>
                         
                         <button 
                         class="btn-to-fav" 

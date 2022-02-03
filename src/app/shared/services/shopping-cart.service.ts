@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { Cart } from '../models/cart.model';
 import { Product } from '../models/product.model';
@@ -12,7 +12,6 @@ import { ProductService } from './product.service';
 })
 export class ShoppingCartService {
 
-  cartItemsCount = new Subject<number>()
 
   constructor(private fs: AngularFirestore, private productService: ProductService) { }
 
@@ -64,6 +63,8 @@ export class ShoppingCartService {
   async removeFromCart(productId){
     const cartId= await this.getOrCreatCartId()
     this.getCartItem(cartId, productId).delete()
+
+    this.updateUiState(productId)
   }
 
 
@@ -93,8 +94,9 @@ export class ShoppingCartService {
         };
         
         cartItem.set(item)
-      }
+        this.updateUiState(product.id)
 
+      }
     })
     
   }
@@ -104,12 +106,28 @@ export class ShoppingCartService {
 
     (await this.fs.collection(`/shopping-cart/`).doc(`${cartId}`).collection('items').ref.get())
     .forEach(el=>{
-      this.productService.editProduct(el.id, {inCart: false})
+      // this.productService.editProduct(el.id, {inCart: false})
       el.ref.delete()
       //this.fs.doc(`/shopping-cart/${cartId}/items/${el.id}`).delete()
     })
     
+    localStorage.removeItem('productsInCart');
   }
+
+
+  updateUiState(productId?){
+  // handel ADD TO CART Button state
+  const productsInCartMap = new Map(JSON.parse(localStorage.getItem('productsInCart')))
+  if(productId){
+    const inCart = productsInCartMap.get(productId)
+
+    if(inCart) productsInCartMap.delete(productId)
+    else productsInCartMap.set(productId, true)
+    }
+    localStorage.setItem('productsInCart', JSON.stringify(Array.from(productsInCartMap.entries())))
+  }
+
+
 
   async applyCouponDisc(code){
   
