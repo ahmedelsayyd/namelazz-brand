@@ -20,6 +20,7 @@
     &__scroll{
         height: calc(100vh - 10.5rem);
         overflow-y: auto;
+        padding-bottom: 6rem;
 
         &::-webkit-scrollbar {
             width: 0px;

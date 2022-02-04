@@ -17,8 +17,7 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
-          "ar": "src/locale/messages.ar.xlf",
-          "en": "src/locale/messages.en.xlf"
+          "ar": "src/locale/messages.ar.xlf"
         }
       },
 
@@ -64,9 +63,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": {
-                "scripts": false
-              },
+              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -78,7 +75,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -88,12 +85,7 @@
               ]
             },
 
-            "en": {
-              "localize": ["en"],
-              "outputPath": "dist/namelazz-brand-en",
-              "i18nMissingTranslation": "error",
-              "baseHref": "/en/"
-            },
+
             "ar": {
               "localize": ["ar"],
               "outputPath": "dist/namelazz-brand-ar",

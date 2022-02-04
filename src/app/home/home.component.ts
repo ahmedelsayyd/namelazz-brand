@@ -14,6 +14,7 @@ import { LocaleService } from '../shared/services/locale.service';
   animations: []
 })
 export class HomeComponent implements OnInit {
+  componentName = 'HomeComponent';
   siteDirections
 
   products:Observable<Product[]>;

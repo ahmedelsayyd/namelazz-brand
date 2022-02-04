@@ -117,7 +117,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onActive(e,outlet) {    
-    this.uiService.updateLoadedComponent(e.constructor.name);
+    console.log(e);
+    
+    this.uiService.updateLoadedComponent(e.componentName);
     outlet.scrollTop = 0;
     window.scrollTo(0, 0);
   }
